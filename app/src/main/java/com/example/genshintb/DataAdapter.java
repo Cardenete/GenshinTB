@@ -52,7 +52,7 @@ public class DataAdapter {
 
     public Cursor getAllPersonajes(){
         try{
-            String sql = "SELECT * FROM " + "prueba";
+            String sql = "SELECT * FROM " + "Personaje";
             Cursor cursor = mDb.rawQuery(sql, null);
             return cursor;
         }catch (SQLException e){
@@ -74,7 +74,7 @@ public class DataAdapter {
 
     public Cursor getPersonaje(int id){
         try{
-            String sql = "SELECT * FROM " + "prueba" + " WHERE ID=" +  Integer.toString(id);
+            String sql = "SELECT * FROM " + "Personaje" + " WHERE ID=" +  Integer.toString(id);
             return mDb.rawQuery(sql, null);
         }catch (SQLException e){
             Log.e(TAG, "getTestData >>"+ mDbHelper.DB_FILE + " "+ e.toString());
