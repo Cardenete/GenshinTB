@@ -1,4 +1,6 @@
-package com.example.genshintb;
+package com.example.genshintb.model;
+
+import com.example.genshintb.model.PersonajeModel;
 
 public class EquipoModel {
 

@@ -7,9 +7,8 @@
     <string name="previous">Previous</string>
 
 
-
-
     <string name="title_activity_main">MainActivity</string>
     <string name="tab_text_1">Equipos</string>
     <string name="tab_text_2">Personajes</string>
+    <string name="title_activity_equipo">EquipoActivity</string>
 </resources>

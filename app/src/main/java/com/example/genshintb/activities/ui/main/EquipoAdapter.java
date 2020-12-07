@@ -1,4 +1,4 @@
-package com.example.genshintb;
+package com.example.genshintb.activities.ui.main;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -6,6 +6,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
+
+import com.example.genshintb.R;
+import com.example.genshintb.database.DataAdapter;
+import com.example.genshintb.model.EquipoModel;
 
 import java.util.List;
 

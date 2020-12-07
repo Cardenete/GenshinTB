@@ -1,4 +1,4 @@
-package com.example.genshintb;
+package com.example.genshintb.database;
 
 import android.content.Context;
 import android.database.Cursor;
@@ -7,8 +7,6 @@ import android.database.sqlite.SQLiteDatabase;
 import android.util.Log;
 
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
 
 public class DataAdapter {
 

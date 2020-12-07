@@ -1,4 +1,4 @@
-package com.example.genshintb.ui.main;
+package com.example.genshintb.activities.ui.equipo;
 
 import android.content.Context;
 
@@ -29,14 +29,7 @@ public class SectionsPagerAdapter extends FragmentPagerAdapter {
     public Fragment getItem(int position) {
         // getItem is called to instantiate the fragment for the given page.
         // Return a PlaceholderFragment (defined as a static inner class below).
-        switch (position){
-            case 0:
-                return EquiposFragment.newInstance();
-            case 1:
-                return PersonajesFragment.newInstance();
-            default:
-                return null;
-        }
+        return PlaceholderFragment.newInstance(position + 1);
     }
 
     @Nullable
@@ -47,7 +40,7 @@ public class SectionsPagerAdapter extends FragmentPagerAdapter {
 
     @Override
     public int getCount() {
-        // Show 2 total pages.
-        return 2;
+        // Show 4 total pages.
+        return 4;
     }
 }

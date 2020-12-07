@@ -1,4 +1,4 @@
-package com.example.genshintb.ui.main;
+package com.example.genshintb.fragments;
 
 import android.database.Cursor;
 import android.os.Bundle;
@@ -9,10 +9,9 @@ import android.widget.ArrayAdapter;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.ListFragment;
-import androidx.navigation.fragment.NavHostFragment;
 
-import com.example.genshintb.DataAdapter;
-import com.example.genshintb.PersonajeModel;
+import com.example.genshintb.database.DataAdapter;
+import com.example.genshintb.model.PersonajeModel;
 import com.example.genshintb.R;
 
 import java.util.ArrayList;

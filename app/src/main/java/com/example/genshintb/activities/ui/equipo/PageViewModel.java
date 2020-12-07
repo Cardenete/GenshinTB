@@ -1,4 +1,4 @@
-package com.example.genshintb.ui.main;
+package com.example.genshintb.activities.ui.equipo;
 
 import androidx.arch.core.util.Function;
 import androidx.lifecycle.LiveData;

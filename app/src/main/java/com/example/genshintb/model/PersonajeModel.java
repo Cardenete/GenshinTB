@@ -1,4 +1,4 @@
-package com.example.genshintb;
+package com.example.genshintb.model;
 
 public class PersonajeModel {
 

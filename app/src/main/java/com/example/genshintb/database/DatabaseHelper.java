@@ -1,4 +1,4 @@
-package com.example.genshintb;
+package com.example.genshintb.database;
 
 import android.content.Context;
 import android.database.Cursor;
