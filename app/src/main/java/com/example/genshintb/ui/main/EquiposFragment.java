@@ -5,18 +5,14 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.ListFragment;
-import androidx.navigation.fragment.NavHostFragment;
 
 import com.example.genshintb.DataAdapter;
 import com.example.genshintb.EquipoAdapter;
 import com.example.genshintb.EquipoModel;
-import com.example.genshintb.EquipoModel2;
 import com.example.genshintb.PersonajeModel;
 import com.example.genshintb.R;
 
@@ -25,9 +21,8 @@ import java.util.List;
 
 public class EquiposFragment extends Fragment {
 
-    //ArrayAdapter adapter;
     EquipoAdapter adapter;
-    List<EquipoModel2> lista = new ArrayList<>();
+    List<EquipoModel> lista = new ArrayList<>();
     DataAdapter data;
     ListView lv;
 
@@ -47,10 +42,8 @@ public class EquiposFragment extends Fragment {
         lv = (ListView)view.findViewById(R.id.equipos);
         data = new DataAdapter(getActivity().getApplicationContext());
         viewData();
-        //adapter = new ArrayAdapter<EquipoModel2>(getActivity(), android.R.layout.simple_list_item_1, lista);
         adapter = new EquipoAdapter(getActivity(), lista);
         lv.setAdapter(adapter);
-        //setListAdapter(adapter);
 
         return view;
     }
@@ -84,7 +77,7 @@ public class EquiposFragment extends Fragment {
                 PersonajeModel per3 = viewPersonaje(char3);
                 PersonajeModel per4 = viewPersonaje(char4);
 
-                EquipoModel2 newEquipo = new EquipoModel2(equipoID, per1, per2, per3, per4);
+                EquipoModel newEquipo = new EquipoModel(equipoID, per1, per2, per3, per4);
                 lista.add(newEquipo);
 
             }while(cursor.moveToNext());

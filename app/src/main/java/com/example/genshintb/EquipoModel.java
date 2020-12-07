@@ -3,12 +3,12 @@ package com.example.genshintb;
 public class EquipoModel {
 
     private int ID;
-    private int char1;
-    private int char2;
-    private int char3;
-    private int char4;
+    private PersonajeModel char1;
+    private PersonajeModel char2;
+    private PersonajeModel char3;
+    private PersonajeModel char4;
 
-    public EquipoModel(int ID, int char1, int char2, int char3, int char4) {
+    public EquipoModel(int ID, PersonajeModel char1, PersonajeModel char2, PersonajeModel char3, PersonajeModel char4) {
         this.ID = ID;
         this.char1 = char1;
         this.char2 = char2;
@@ -18,7 +18,7 @@ public class EquipoModel {
 
     @Override
     public String toString() {
-        return "EquipoModel{" +
+        return "EquipoModel2{" +
                 "ID=" + ID +
                 ", char1=" + char1 +
                 ", char2=" + char2 +
@@ -35,35 +35,35 @@ public class EquipoModel {
         this.ID = ID;
     }
 
-    public int getChar1() {
+    public PersonajeModel getChar1() {
         return char1;
     }
 
-    public void setChar1(int char1) {
+    public void setChar1(PersonajeModel char1) {
         this.char1 = char1;
     }
 
-    public int getChar2() {
+    public PersonajeModel getChar2() {
         return char2;
     }
 
-    public void setChar2(int char2) {
+    public void setChar2(PersonajeModel char2) {
         this.char2 = char2;
     }
 
-    public int getChar3() {
+    public PersonajeModel getChar3() {
         return char3;
     }
 
-    public void setChar3(int char3) {
+    public void setChar3(PersonajeModel char3) {
         this.char3 = char3;
     }
 
-    public int getChar4() {
+    public PersonajeModel getChar4() {
         return char4;
     }
 
-    public void setChar4(int char4) {
+    public void setChar4(PersonajeModel char4) {
         this.char4 = char4;
     }
 }
