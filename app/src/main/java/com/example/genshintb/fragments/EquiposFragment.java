@@ -1,15 +1,19 @@
 package com.example.genshintb.fragments;
 
+import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
+import com.example.genshintb.activities.EquipoActivity;
 import com.example.genshintb.database.DataAdapter;
 import com.example.genshintb.activities.ui.main.EquipoAdapter;
 import com.example.genshintb.model.EquipoModel;
@@ -17,7 +21,9 @@ import com.example.genshintb.model.PersonajeModel;
 import com.example.genshintb.R;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
+import java.util.Map;
 
 public class EquiposFragment extends Fragment {
 
@@ -44,22 +50,24 @@ public class EquiposFragment extends Fragment {
         viewData();
         adapter = new EquipoAdapter(getActivity(), lista);
         lv.setAdapter(adapter);
-
+        lv.setClickable(true);
         return view;
     }
 
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-
-        //Ver como es boton
-        /*view.findViewById(R.id.button_second).setOnClickListener(new View.OnClickListener() {
+        lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
-            public void onClick(View view) {
-                NavHostFragment.findNavController(PersonajesFragment.this)
-                        .navigate(R.id.action_SecondFragment_to_FirstFragment);
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                EquipoModel equipo = (EquipoModel)adapter.getItem(position);
+                Toast.makeText(getActivity(), Integer.toString(equipo.getID()), Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(getActivity().getApplicationContext(), EquipoActivity.class);
+                startActivity(intent);
             }
-        });*/
+        });
     }
+
+
 
     private void viewData(){
         data.open();

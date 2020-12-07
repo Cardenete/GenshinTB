@@ -5,23 +5,31 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.ListView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.fragment.app.Fragment;
 import androidx.fragment.app.ListFragment;
 
 import com.example.genshintb.database.DataAdapter;
+import com.example.genshintb.model.EquipoModel;
 import com.example.genshintb.model.PersonajeModel;
 import com.example.genshintb.R;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
+import java.util.Map;
 
-public class PersonajesFragment extends ListFragment {
+public class PersonajesFragment extends Fragment {
 
     ArrayAdapter adapter;
     List<PersonajeModel> lista = new ArrayList<>();
     DataAdapter data;
+    ListView lv;
 
     public static PersonajesFragment newInstance() {
         PersonajesFragment fragment = new PersonajesFragment();
@@ -35,11 +43,11 @@ public class PersonajesFragment extends ListFragment {
     ) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_lista_personaje, container, false);
-
+        lv = (ListView)view.findViewById(R.id.lv_personajes);
         data = new DataAdapter(getActivity().getApplicationContext());
         viewData();
         adapter = new ArrayAdapter<PersonajeModel>(getActivity(), android.R.layout.simple_list_item_1, lista);
-        setListAdapter(adapter);
+        lv.setAdapter(adapter);
 
         return view;
     }
@@ -47,14 +55,15 @@ public class PersonajesFragment extends ListFragment {
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        //Ver como es boton
-        /*view.findViewById(R.id.button_second).setOnClickListener(new View.OnClickListener() {
+        lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
-            public void onClick(View view) {
-                NavHostFragment.findNavController(PersonajesFragment.this)
-                        .navigate(R.id.action_SecondFragment_to_FirstFragment);
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                PersonajeModel personaje = (PersonajeModel)adapter.getItem(position);
+
+                Toast.makeText(getActivity(), personaje.getNombre(), Toast.LENGTH_SHORT).show();
             }
-        });*/
+        });
+
     }
 
     private void viewData(){
