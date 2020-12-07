@@ -60,7 +60,7 @@ public class PersonajesFragment extends ListFragment {
 
     private void viewData(){
         data.open();
-        Cursor cursor = data.getData();
+        Cursor cursor = data.getAllPersonajes();
         if(cursor.moveToFirst()){
             do{
                 int personajeID = cursor.getInt(0);

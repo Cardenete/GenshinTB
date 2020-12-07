@@ -8,6 +8,7 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
 
+import com.example.genshintb.EquipoModel;
 import com.example.genshintb.R;
 
 /**
@@ -31,7 +32,7 @@ public class SectionsPagerAdapter extends FragmentPagerAdapter {
         // Return a PlaceholderFragment (defined as a static inner class below).
         switch (position){
             case 0:
-                return PlaceholderFragment.newInstance(position + 1);
+                return EquiposFragment.newInstance();
             case 1:
                 return PersonajesFragment.newInstance();
             default:

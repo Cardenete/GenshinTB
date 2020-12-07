@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/char1"
+        android:text="f"
+        android:textSize="20sp"
+        android:layout_marginTop="19dp"
+        android:layout_alignParentTop="true"
+        android:layout_toLeftOf="@+id/char2"
+        android:layout_toStartOf="@+id/char2"
+        android:layout_marginRight="30dp"
+        android:layout_marginEnd="30dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/char2"
+        android:text="Price"
+        android:textSize="20sp"
+        android:layout_alignBaseline="@+id/char1"
+        android:layout_alignBottom="@+id/char1"
+        android:layout_centerHorizontal="true"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/char3"
+        android:text="Stock"
+        android:textSize="20sp"
+        android:layout_alignBaseline="@+id/char2"
+        android:layout_alignBottom="@+id/char2"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginRight="81dp"
+        android:layout_marginEnd="81dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/char4"
+        android:text="Stock"
+        android:textSize="20sp"
+        android:layout_alignBaseline="@+id/char3"
+        android:layout_alignBottom="@+id/char3"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginRight="81dp"
+        android:layout_marginEnd="81dp"/>
+</RelativeLayout>

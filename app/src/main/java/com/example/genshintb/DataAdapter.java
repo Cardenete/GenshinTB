@@ -50,11 +50,47 @@ public class DataAdapter {
         mDbHelper.close();
     }
 
-    public Cursor getData(){
+    public Cursor getAllPersonajes(){
         try{
             String sql = "SELECT * FROM " + "prueba";
             Cursor cursor = mDb.rawQuery(sql, null);
             return cursor;
+        }catch (SQLException e){
+            Log.e(TAG, "getTestData >>"+ mDbHelper.DB_FILE + " "+ e.toString());
+            throw e;
+        }
+    }
+
+    public Cursor getAllEquipos(){
+        try{
+            String sql = "SELECT * FROM " + "Equipo";
+            Cursor cursor = mDb.rawQuery(sql, null);
+            return cursor;
+        }catch (SQLException e){
+            Log.e(TAG, "getTestData >>"+ mDbHelper.DB_FILE + " "+ e.toString());
+            throw e;
+        }
+    }
+
+    public Cursor getPersonaje(int id){
+        try{
+            String sql = "SELECT * FROM " + "prueba" + " WHERE ID=" +  Integer.toString(id);
+            return mDb.rawQuery(sql, null);
+            /*Cursor cursor = mDb.rawQuery(sql, null);
+            if(cursor.moveToFirst()){
+                int personajeID = cursor.getInt(0);
+                String personajeName = cursor.getString(1);
+                int personajeEstrellas = cursor.getInt(2);
+                String personajeElemento = cursor.getString(3);
+                String personajeTipoArma = cursor.getString(4);
+                String personajeImagen = cursor.getString(5);
+
+                return new PersonajeModel(personajeID, personajeName, personajeEstrellas, personajeElemento,
+                        personajeTipoArma, personajeImagen);
+            }else{
+                return new PersonajeModel();
+            }*/
+
         }catch (SQLException e){
             Log.e(TAG, "getTestData >>"+ mDbHelper.DB_FILE + " "+ e.toString());
             throw e;
