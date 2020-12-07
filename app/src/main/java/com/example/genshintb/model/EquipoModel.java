@@ -9,6 +9,16 @@ public class EquipoModel {
     private PersonajeModel char2;
     private PersonajeModel char3;
     private PersonajeModel char4;
+    private String nombre;
+
+    public EquipoModel(int ID, PersonajeModel char1, PersonajeModel char2, PersonajeModel char3, PersonajeModel char4, String nombre) {
+        this.ID = ID;
+        this.char1 = char1;
+        this.char2 = char2;
+        this.char3 = char3;
+        this.char4 = char4;
+        this.nombre = nombre;
+    }
 
     public EquipoModel(int ID, PersonajeModel char1, PersonajeModel char2, PersonajeModel char3, PersonajeModel char4) {
         this.ID = ID;
@@ -16,16 +26,18 @@ public class EquipoModel {
         this.char2 = char2;
         this.char3 = char3;
         this.char4 = char4;
+        this.nombre = "Equipo " + ID;
     }
 
     @Override
     public String toString() {
-        return "EquipoModel2{" +
+        return "EquipoModel{" +
                 "ID=" + ID +
                 ", char1=" + char1 +
                 ", char2=" + char2 +
                 ", char3=" + char3 +
                 ", char4=" + char4 +
+                ", nombre='" + nombre + '\'' +
                 '}';
     }
 
@@ -68,4 +80,8 @@ public class EquipoModel {
     public void setChar4(PersonajeModel char4) {
         this.char4 = char4;
     }
+
+    public String getNombre() { return nombre;  }
+
+    public void setNombre(String nombre) {  this.nombre = nombre; }
 }

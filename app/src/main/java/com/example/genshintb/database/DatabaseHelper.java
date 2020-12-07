@@ -5,6 +5,7 @@ import android.database.Cursor;
 import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.os.LocaleList;
 import android.util.Log;
 
 import androidx.annotation.Nullable;
@@ -21,7 +22,10 @@ import java.util.List;
 public class DatabaseHelper extends SQLiteOpenHelper {
 
     private static String TAG = "DatabaseHelper";
-    public static final String DB_NAME = "genshin.db";
+    public static final String DB_NAME_EN = "genshin.db";
+    public static final String DB_NAME_ES = "genshin_es.db";
+    private String DB_NAME;
+
 
     private final Context mContext;
     public final File DB_FILE;
@@ -29,7 +33,13 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     public DatabaseHelper(@Nullable Context context) {
         super(context, "genshin.db", null, 1);
-        DB_FILE = new File(context.getApplicationInfo().dataDir + "/databases/" + DB_NAME);
+        if(LocaleList.getDefault().get(0).equals("es")) {
+            DB_FILE = new File(context.getApplicationInfo().dataDir + "/databases/" + DB_NAME_ES);
+            DB_NAME = DB_NAME_ES;
+        } else {
+            DB_FILE = new File(context.getApplicationInfo().dataDir + "/databases/" + DB_NAME_EN);
+            DB_NAME = DB_NAME_EN;
+        }
         this.mContext = context;
     }
 
