@@ -2,6 +2,7 @@ package com.example.genshintb.activities.ui.equipo;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.util.Log;
 
 import androidx.annotation.Nullable;
 import androidx.annotation.StringRes;
@@ -32,10 +33,10 @@ public class SectionsPagerAdapter extends FragmentPagerAdapter {
     public SectionsPagerAdapter(Context context, FragmentManager fm, EquipoModel equipo) {
         super(fm);
         mContext = context;
-        lista.set(0, equipo.getChar1());
-        lista.set(1, equipo.getChar2());
-        lista.set(2, equipo.getChar3());
-        lista.set(3, equipo.getChar4());
+        lista.add(equipo.getChar1());
+        lista.add(equipo.getChar2());
+        lista.add(equipo.getChar3());
+        lista.add(equipo.getChar4());
         titulos = new String[]{equipo.getChar1().getNombre(), equipo.getChar2().getNombre(), equipo.getChar3().getNombre(), equipo.getChar4().getNombre()};
 
     }
