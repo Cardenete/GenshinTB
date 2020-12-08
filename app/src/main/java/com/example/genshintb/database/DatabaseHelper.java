@@ -22,7 +22,7 @@ import java.util.List;
 public class DatabaseHelper extends SQLiteOpenHelper {
 
     private static String TAG = "DatabaseHelper";
-    public static final String DB_NAME_EN = "genshin.db";
+    public static final String DB_NAME_EN = "genshin_en.db";
     public static final String DB_NAME_ES = "genshin_es.db";
     private String DB_NAME;
 
