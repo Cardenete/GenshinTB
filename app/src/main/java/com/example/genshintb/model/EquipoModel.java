@@ -1,6 +1,10 @@
 package com.example.genshintb.model;
 
+import com.example.genshintb.fragments.PersonajesFragment;
 import com.example.genshintb.model.PersonajeModel;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class EquipoModel {
 
@@ -40,6 +44,16 @@ public class EquipoModel {
                 ", nombre='" + nombre + '\'' +
                 '}';
     }
+
+    public List<PersonajeModel> listaMiembros(){
+        List<PersonajeModel> lista = new ArrayList<>();
+        lista.add(char1);
+        lista.add(char2);
+        lista.add(char3);
+        lista.add(char4);
+        return lista;
+    }
+
 
     public int getID() {
         return ID;
