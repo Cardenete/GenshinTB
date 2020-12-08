@@ -37,7 +37,7 @@ public class PersonajeActivity extends AppCompatActivity {
         setContentView(R.layout.activity_personaje);
 
         personaje = (PersonajeModel) SingletonMap.getInstance().get("personaje");
-        Log.i("FTVGBHJNKAMGILEDGBDSA", personaje.getNombre());
+        Log.i("FTVGBHJNKAMGILEDGBDSA", personaje.getNombre().toLowerCase());
         nombre = (TextView)findViewById(R.id.nombrePersonaje);
         elemento = (TextView)findViewById(R.id.elementoPersonaje);
         retrato = (ImageView) findViewById(R.id.imagenPersonaje);
@@ -59,7 +59,7 @@ public class PersonajeActivity extends AppCompatActivity {
         InputStream is = null;
         try{
             is=am.open(fileName + ".png");
-            Log.i("gf", is.toString());
+            Log.i("gf", fileName);
         }catch (IOException e){
             e.printStackTrace();
         }
