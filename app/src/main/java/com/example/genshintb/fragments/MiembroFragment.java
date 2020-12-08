@@ -1,14 +1,20 @@
 package com.example.genshintb.fragments;
 
+import android.content.res.AssetManager;
 import android.database.Cursor;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
-
+import android.content.res.AssetManager;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
@@ -21,6 +27,9 @@ import com.example.genshintb.model.EquipoModel;
 import com.example.genshintb.model.PersonajeModel;
 import com.example.genshintb.util.SingletonMap;
 
+import java.io.IOException;
+import java.io.InputStream;
+import java.util.ArrayList;
 import java.util.List;
 
 public class MiembroFragment extends Fragment {
@@ -34,7 +43,7 @@ public class MiembroFragment extends Fragment {
     TextView nombre;
     EquipoModel equipo;
     List<PersonajeModel> listaEquipo;
-    List<PersonajeModel> listaPersonajes;
+    List<PersonajeModel> listaPersonajes = new ArrayList<>();
 
     public MiembroFragment(PersonajeModel personaje) {
         this.personaje = personaje;
@@ -53,7 +62,7 @@ public class MiembroFragment extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_miembro, container, false);
 
-
+        cargaPersonaje(view);
 
         return view;
     }
@@ -76,16 +85,18 @@ public class MiembroFragment extends Fragment {
         nombre.setText(personaje.getNombre());
 
         estrellas = (TextView) view.findViewById(R.id.estrellasMiembro);
-        estrellas.setText(personaje.getEstrellas());
+        estrellas.setText(Integer.toString(personaje.getEstrellas()));
 
         elemento = (ImageView) view.findViewById(R.id.fotoElemento);
+        elemento.setImageBitmap(getBitmapFromAssets("elementos/" + personaje.getElemento().toLowerCase()));
 
         foto = (ImageView) view.findViewById(R.id.fotoPersonaje);
+        foto.setImageBitmap(getBitmapFromAssets("personajes/" + personaje.getNombre().toLowerCase()));
 
 
         equipo = (EquipoModel) SingletonMap.getInstance().get("equipo");
         listaEquipo = equipo.listaMiembros();
-        listaPersonajes.add(personaje);
+        //listaPersonajes.add(personaje);
         data = new DataAdapter(getActivity().getApplicationContext());
 
         data.open();
@@ -123,7 +134,7 @@ public class MiembroFragment extends Fragment {
     }
 
 
-    public ArmaModel viewArma(int id){
+    private ArmaModel viewArma(int id){
         Cursor cursor = data.getArma(id);
         if(cursor.moveToFirst()){
             return new ArmaModel(cursor.getInt(0), cursor.getString(1),
@@ -134,7 +145,7 @@ public class MiembroFragment extends Fragment {
         }
     }
 
-    public ArtefactoModel viewArtefacto(int id){
+    private ArtefactoModel viewArtefacto(int id){
         Cursor cursor = data.getArtefacto(id);
         if(cursor.moveToFirst()){
             return new ArtefactoModel(cursor.getInt(0), cursor.getString(1));
@@ -143,6 +154,19 @@ public class MiembroFragment extends Fragment {
         }
     }
 
+    private Bitmap getBitmapFromAssets(String fileName){
+
+        AssetManager am = getActivity().getAssets();
+        InputStream is = null;
+        try{
+            is=am.open(fileName + ".png");
+            Log.i("gf", is.toString());
+        }catch (IOException e){
+            e.printStackTrace();
+        }
+
+        return BitmapFactory.decodeStream(is);
+    }
 
 
 
