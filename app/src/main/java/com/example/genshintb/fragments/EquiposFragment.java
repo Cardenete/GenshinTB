@@ -82,13 +82,14 @@ public class EquiposFragment extends Fragment {
                 int char2 = cursor.getInt(2);
                 int char3 = cursor.getInt(3);
                 int char4 = cursor.getInt(4);
+                String nombre = cursor.getString(5);
 
                 PersonajeModel per1 = viewPersonaje(char1);
                 PersonajeModel per2 = viewPersonaje(char2);
                 PersonajeModel per3 = viewPersonaje(char3);
                 PersonajeModel per4 = viewPersonaje(char4);
 
-                EquipoModel newEquipo = new EquipoModel(equipoID, per1, per2, per3, per4);
+                EquipoModel newEquipo = new EquipoModel(equipoID, per1, per2, per3, per4, nombre);
                 lista.add(newEquipo);
 
             }while(cursor.moveToNext());

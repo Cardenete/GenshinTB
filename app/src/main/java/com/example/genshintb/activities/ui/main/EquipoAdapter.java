@@ -50,6 +50,7 @@ public class EquipoAdapter extends BaseAdapter {
         TextView char2 = (TextView)view.findViewById(R.id.pers2);
         TextView char3 = (TextView)view.findViewById(R.id.pers3);
         TextView char4 = (TextView)view.findViewById(R.id.pers4);
+        TextView nombre = (TextView)view.findViewById(R.id.nombre);
 
         EquipoModel equipo = (EquipoModel)getItem(position);
 
@@ -57,6 +58,7 @@ public class EquipoAdapter extends BaseAdapter {
         char2.setText(equipo.getChar2().getNombre());
         char3.setText(equipo.getChar3().getNombre());
         char4.setText(equipo.getChar4().getNombre());
+        nombre.setText(equipo.getNombre());
 
         return view;
     }
