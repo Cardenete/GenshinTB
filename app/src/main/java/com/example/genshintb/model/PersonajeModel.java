@@ -5,8 +5,8 @@ public class PersonajeModel {
     private int ID;
     private String Nombre;
     private int Estrellas;
-    private String Elemento;
     private String TipoArma;
+    private String Elemento;
     private ArmaModel Arma;
     private ArtefactoModel Set1;
     private ArtefactoModel Set2;
@@ -14,12 +14,12 @@ public class PersonajeModel {
     private String Caliz;
     private String Diadema;
 
-    public PersonajeModel(int ID, String nombre, int estrellas, String elemento, String tipoArma, ArmaModel arma, ArtefactoModel set1, ArtefactoModel set2, String reloj, String caliz, String diadema) {
+    public PersonajeModel(int ID, String nombre, int estrellas, String tipoArma, String elemento, ArmaModel arma, ArtefactoModel set1, ArtefactoModel set2, String reloj, String caliz, String diadema) {
         this.ID = ID;
         Nombre = nombre;
         Estrellas = estrellas;
-        Elemento = elemento;
         TipoArma = tipoArma;
+        Elemento = elemento;
         Arma = arma;
         Set1 = set1;
         Set2 = set2;

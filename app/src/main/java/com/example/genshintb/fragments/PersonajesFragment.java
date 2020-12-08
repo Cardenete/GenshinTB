@@ -1,5 +1,6 @@
 package com.example.genshintb.fragments;
 
+import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -14,12 +15,15 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.ListFragment;
 
+import com.example.genshintb.activities.EquipoActivity;
+import com.example.genshintb.activities.PersonajeActivity;
 import com.example.genshintb.database.DataAdapter;
 import com.example.genshintb.model.ArmaModel;
 import com.example.genshintb.model.ArtefactoModel;
 import com.example.genshintb.model.EquipoModel;
 import com.example.genshintb.model.PersonajeModel;
 import com.example.genshintb.R;
+import com.example.genshintb.util.SingletonMap;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -61,8 +65,10 @@ public class PersonajesFragment extends Fragment {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 PersonajeModel personaje = (PersonajeModel)adapter.getItem(position);
-
                 Toast.makeText(getActivity(), personaje.getNombre(), Toast.LENGTH_SHORT).show();
+                SingletonMap.getInstance().put("personaje", personaje);
+                Intent intent = new Intent(getActivity().getApplicationContext(), PersonajeActivity.class);
+                startActivity(intent);
             }
         });
 

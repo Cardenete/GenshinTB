@@ -9,10 +9,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.GenshinTB">
+        <activity android:name=".activities.PersonajeActivity"></activity>
         <activity
             android:name=".activities.EquipoActivity"
             android:label="@string/title_activity_equipo"
-            android:theme="@style/Theme.GenshinTB.NoActionBar"></activity>
+            android:theme="@style/Theme.GenshinTB.NoActionBar" />
         <activity
             android:name=".activities.MainActivity"
             android:label="@string/title_activity_main"

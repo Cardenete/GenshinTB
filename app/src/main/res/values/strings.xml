@@ -6,7 +6,8 @@
     <string name="second_fragment_label">Second Fragment</string>
     <string name="previous">Previous</string>
 
-
+    <string name="personajeDescription">Retrato del personaje</string>
+    <string name="elementoDescription">Elemento del personaje</string>
     <string name="title_activity_main">MainActivity</string>
     <string name="tab_text_1">Equipos</string>
     <string name="tab_text_2">Personajes</string>
