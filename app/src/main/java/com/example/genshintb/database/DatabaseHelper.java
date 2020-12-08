@@ -32,8 +32,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     private SQLiteDatabase mDatabase;
 
     public DatabaseHelper(@Nullable Context context) {
-        super(context, "genshin.db", null, 1);
-        if(LocaleList.getDefault().get(0).equals("es")) {
+        super(context, (context.getResources().getConfiguration().getLocales().get(0).getLanguage().equals("es") ? DB_NAME_ES : DB_NAME_EN), null, 1);
+        if(context.getResources().getConfiguration().getLocales().get(0).getLanguage().equals("es")) {
             DB_FILE = new File(context.getApplicationInfo().dataDir + "/databases/" + DB_NAME_ES);
             DB_NAME = DB_NAME_ES;
         } else {

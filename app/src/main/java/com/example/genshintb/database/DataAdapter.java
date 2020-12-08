@@ -79,4 +79,24 @@ public class DataAdapter {
             throw e;
         }
     }
+
+    public Cursor getArma(int id){
+        try{
+            String sql = "SELECT * FROM " + "Arma" + " WHERE id=" +  Integer.toString(id);
+            return mDb.rawQuery(sql, null);
+        }catch (SQLException e){
+            Log.e(TAG, "getTestData >>"+ mDbHelper.DB_FILE + " "+ e.toString());
+            throw e;
+        }
+    }
+
+    public Cursor getArtefacto(int id){
+        try{
+            String sql = "SELECT * FROM " + "Artefacto" + " WHERE id=" +  Integer.toString(id);
+            return mDb.rawQuery(sql, null);
+        }catch (SQLException e){
+            Log.e(TAG, "getTestData >>"+ mDbHelper.DB_FILE + " "+ e.toString());
+            throw e;
+        }
+    }
 }

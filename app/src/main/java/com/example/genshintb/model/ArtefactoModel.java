@@ -9,6 +9,10 @@ public class ArtefactoModel {
         Nombre = nombre;
     }
 
+    public ArtefactoModel(){
+
+    }
+
     public int getID() { return ID; }
 
     public void setID(int ID) { this.ID = ID; }

@@ -2,6 +2,7 @@ package com.example.genshintb.fragments;
 
 import android.content.Intent;
 import android.database.Cursor;
+import android.database.CursorIndexOutOfBoundsException;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -16,6 +17,8 @@ import androidx.fragment.app.Fragment;
 import com.example.genshintb.activities.EquipoActivity;
 import com.example.genshintb.database.DataAdapter;
 import com.example.genshintb.activities.ui.main.EquipoAdapter;
+import com.example.genshintb.model.ArmaModel;
+import com.example.genshintb.model.ArtefactoModel;
 import com.example.genshintb.model.EquipoModel;
 import com.example.genshintb.model.PersonajeModel;
 import com.example.genshintb.R;
@@ -101,12 +104,37 @@ public class EquiposFragment extends Fragment {
             int personajeEstrellas = cursor.getInt(2);
             String personajeElemento = cursor.getString(3);
             String personajeTipoArma = cursor.getString(4);
-            String personajeImagen = cursor.getString(5);
+            ArmaModel personajeArma = viewArma(cursor.getInt(5));
+            ArtefactoModel set1 = viewArtefacto(cursor.getInt(6));
+            ArtefactoModel set2 = viewArtefacto(cursor.getInt(7));
+            String reloj = cursor.getString(8);
+            String caliz = cursor.getString(9);
+            String diadema = cursor.getString(10);
 
             return new PersonajeModel(personajeID, personajeName, personajeEstrellas, personajeElemento,
-                    personajeTipoArma, personajeImagen);
+                    personajeTipoArma, personajeArma, set1, set2, reloj, caliz, diadema);
         }else{
             return new PersonajeModel();
+        }
+    }
+
+    public ArmaModel viewArma(int id){
+        Cursor cursor = data.getArma(id);
+        if(cursor.moveToFirst()){
+            return new ArmaModel(cursor.getInt(0), cursor.getString(1),
+                        cursor.getInt(2), cursor.getString(3),
+                        cursor.getString(4));
+        }else {
+            return new ArmaModel();
+        }
+    }
+
+    public ArtefactoModel viewArtefacto(int id){
+        Cursor cursor = data.getArtefacto(id);
+        if(cursor.moveToFirst()){
+            return new ArtefactoModel(cursor.getInt(0), cursor.getString(1));
+        }else {
+            return new ArtefactoModel();
         }
     }
 }

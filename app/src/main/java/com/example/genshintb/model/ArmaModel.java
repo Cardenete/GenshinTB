@@ -15,6 +15,10 @@ public class ArmaModel {
         TipoArma = tipoArma;
     }
 
+    public ArmaModel(){
+
+    }
+
     @Override
     public String toString() {
         return "ArmaModel{" +
