@@ -12,12 +12,19 @@ import androidx.fragment.app.Fragment;
 import com.example.genshintb.R;
 import com.example.genshintb.activities.ui.main.EquipoAdapter;
 import com.example.genshintb.database.DataAdapter;
+import com.example.genshintb.model.PersonajeModel;
 
 public class MiembroFragment extends Fragment {
 
+    private PersonajeModel personaje;
 
-    public static MiembroFragment newInstance() {
-        MiembroFragment fragment = new MiembroFragment();
+
+    public MiembroFragment(PersonajeModel personaje) {
+        this.personaje = personaje;
+    }
+
+    public static MiembroFragment newInstance(PersonajeModel personaje) {
+        MiembroFragment fragment = new MiembroFragment(personaje);
         return fragment;
     }
 
