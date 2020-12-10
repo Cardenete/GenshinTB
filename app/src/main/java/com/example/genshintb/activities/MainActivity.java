@@ -74,9 +74,5 @@ public class MainActivity extends AppCompatActivity {
         builder.show();
     }
 
-    @Override
-    public void onBackPressed() {
-        super.onBackPressed();
-        recreate();
-    }
+
 }

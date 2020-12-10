@@ -33,4 +33,10 @@ public class EquipoActivity extends AppCompatActivity {
 
 
     }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        recreate();
+    }
 }
