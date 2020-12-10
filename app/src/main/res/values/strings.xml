@@ -25,4 +25,29 @@
     <string name="relojPersonaje">Reloj equipado:</string>
     <string name="calizPersonaje">Cáliz equipado:</string>
     <string name="diademaPersonaje">Diadema equipada:</string>
+    <string-array name="listaAtributosReloj">
+        <item>Vida</item>
+        <item>Defensa</item>
+        <item>Ataque</item>
+        <item>Recarga de Energía</item>
+        <item>Maestría Elemental</item>
+
+    </string-array>
+    <string-array name="listaAtributosCaliz">
+        <item>Vida</item>
+        <item>Defensa</item>
+        <item>Ataque</item>
+        <item>Maestría Elemental</item>
+        <item>Daño Físico</item>
+        <item>Daño Elemental</item>
+    </string-array>
+    <string-array name="listaAtributosDiadema">
+        <item>Vida</item>
+        <item>Defensa</item>
+        <item>Ataque</item>
+        <item>Maestría Elemental</item>
+        <item>Porcentaje de Crítico</item>
+        <item>Daño de Crítico</item>
+        <item>Bono de Curación</item>
+    </string-array>
 </resources>

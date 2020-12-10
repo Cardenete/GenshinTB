@@ -193,8 +193,8 @@
         app:layout_constraintTop_toBottomOf="@id/listaCambioSet1" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="411dp"
-        android:layout_height="97dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -204,6 +204,7 @@
             android:id="@+id/listaRelojPersonaje"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:entries="@array/listaAtributosReloj"
             android:translationY="-5dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@id/listaCalizPersonaje"
@@ -214,6 +215,7 @@
             android:id="@+id/listaCalizPersonaje"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:entries="@array/listaAtributosCaliz"
             android:translationY="-5dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@id/listaDiademaPersonaje"
@@ -224,6 +226,7 @@
             android:id="@+id/listaDiademaPersonaje"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:entries="@array/listaAtributosDiadema"
             android:translationY="-5dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
