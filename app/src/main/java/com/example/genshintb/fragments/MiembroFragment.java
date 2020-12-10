@@ -1,5 +1,6 @@
 package com.example.genshintb.fragments;
 
+import android.content.Intent;
 import android.content.res.AssetManager;
 import android.database.Cursor;
 import android.graphics.Bitmap;
@@ -17,8 +18,10 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+import androidx.navigation.fragment.NavHostFragment;
 
 import com.example.genshintb.R;
+import com.example.genshintb.activities.PersonajeActivity;
 import com.example.genshintb.activities.ui.main.EquipoAdapter;
 import com.example.genshintb.database.DataAdapter;
 import com.example.genshintb.model.ArmaModel;
@@ -71,13 +74,14 @@ public class MiembroFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
         //Ver como es boton
-        /*view.findViewById(R.id.button_second).setOnClickListener(new View.OnClickListener() {
+        view.findViewById(R.id.detalles).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                NavHostFragment.findNavController(PersonajesFragment.this)
-                        .navigate(R.id.action_SecondFragment_to_FirstFragment);
+                SingletonMap.getInstance().put("personaje", personaje);
+                Intent intent = new Intent(getActivity().getApplicationContext(), PersonajeActivity.class);
+                startActivity(intent);
             }
-        });*/
+        });
     }
 
     private void cargaPersonaje(View view){
