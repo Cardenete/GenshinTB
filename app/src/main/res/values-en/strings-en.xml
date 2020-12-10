@@ -25,6 +25,9 @@
     <string name="relojPersonaje">Sand equipped:</string>
     <string name="calizPersonaje">Goblet equipped</string>
     <string name="diademaPersonaje">Crown equipped</string>
+    <string name="confirmar">Confirm</string>
+    <string name="cancelar">Cancel</string>
+    <string name="nuevoEquipo">Introduce name</string>
     <string-array name="listaAtributosReloj">
         <item>HP</item>
         <item>Defense</item>
