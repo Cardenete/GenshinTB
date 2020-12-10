@@ -13,6 +13,7 @@
     <string name="tab_text_2">Personajes</string>
     <string name="tab_text_3">Placeholder</string>
     <string name="tab_text_4">Personajes</string>
+
     <string name="detalles">Detalles</string>
     <string name="estrella">Estrella</string>
     <string name="cambioPersonaje">Cambiar de personaje:</string>
@@ -25,6 +26,9 @@
     <string name="relojPersonaje">Reloj equipado:</string>
     <string name="calizPersonaje">Cáliz equipado:</string>
     <string name="diademaPersonaje">Diadema equipada:</string>
+    <string name="confirmar">Confirmar</string>
+    <string name="cancelar">Cancelar</string>
+    <string name="nuevoEquipo">Introduce el nombre</string>
     <string-array name="listaAtributosReloj">
         <item>Vida</item>
         <item>Defensa</item>
