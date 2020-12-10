@@ -1,5 +1,6 @@
 package com.example.genshintb.database;
 
+import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.SQLException;
@@ -36,6 +37,19 @@ public class DataAdapter {
             mDbHelper.openDatabase();
             mDbHelper.close();
             mDb = mDbHelper.getReadableDatabase();
+        } catch (SQLException e) {
+            Log.e(TAG, "open >>"+ e.toString());
+            throw e;
+        }
+        return this;
+    }
+
+    public DataAdapter openWritable() throws SQLException {
+        try {
+            mDbHelper.openDatabase();
+            mDbHelper.close();
+            mDb = mDbHelper.getWritableDatabase();
+
         } catch (SQLException e) {
             Log.e(TAG, "open >>"+ e.toString());
             throw e;
@@ -117,6 +131,16 @@ public class DataAdapter {
         }catch (SQLException e){
             Log.e(TAG, "getTestData >>"+ mDbHelper.DB_FILE + " "+ e.toString());
             throw e;
+        }
+    }
+
+    public void cambiarPersonajeEquipo(int pos, int idP, int idE){
+        try{
+            ContentValues cv = new ContentValues();
+            cv.put("personaje" + pos, idP);
+            mDb.update("Equipo", cv, "id=?", new String[]{Integer.toString(idE)});
+        }catch (SQLException e){
+            e.printStackTrace();
         }
     }
 }

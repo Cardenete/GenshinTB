@@ -73,22 +73,34 @@
         app:layout_constraintStart_toEndOf="@+id/iconoEstrella"
         app:layout_constraintTop_toBottomOf="@+id/nombreMiembro" />
 
-    <Spinner
-        android:id="@+id/listaCambioArma"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/detalles" />
-
     <TextView
         android:id="@+id/set1Personaje"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/cambioPersonaje"
-        app:layout_constraintBottom_toTopOf="@+id/listaCambioArma"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/listaCambioPersonaje"
+        tools:layout_editor_absoluteY="619dp" />
+
+    <Spinner
+        android:id="@+id/listaCambioPersonaje"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/detalles" />
+
+    <Button
+        android:id="@+id/botonAdd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Add"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/set1Personaje" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
