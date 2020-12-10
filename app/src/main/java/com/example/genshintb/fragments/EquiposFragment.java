@@ -35,6 +35,7 @@ public class EquiposFragment extends Fragment {
     List<EquipoModel> lista = new ArrayList<>();
     DataAdapter data;
     ListView lv;
+    boolean allowRefresh = false;
 
     public static EquiposFragment newInstance() {
         EquiposFragment fragment = new EquiposFragment();
