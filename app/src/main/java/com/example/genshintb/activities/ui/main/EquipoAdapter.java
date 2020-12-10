@@ -1,16 +1,23 @@
 package com.example.genshintb.activities.ui.main;
 
 import android.content.Context;
+import android.content.res.AssetManager;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.genshintb.R;
 import com.example.genshintb.database.DataAdapter;
 import com.example.genshintb.model.EquipoModel;
 
+import java.io.IOException;
+import java.io.InputStream;
 import java.util.List;
 
 public class EquipoAdapter extends BaseAdapter {
@@ -51,6 +58,10 @@ public class EquipoAdapter extends BaseAdapter {
         TextView char3 = (TextView)view.findViewById(R.id.pers3);
         TextView char4 = (TextView)view.findViewById(R.id.pers4);
         TextView nombre = (TextView)view.findViewById(R.id.nombre);
+        ImageView img1 = (ImageView) view.findViewById(R.id.pers1Imagen);
+        ImageView img2 = (ImageView) view.findViewById(R.id.pers2Imagen);
+        ImageView img3 = (ImageView) view.findViewById(R.id.pers3Imagen);
+        ImageView img4 = (ImageView) view.findViewById(R.id.pers4Imagen);
 
         EquipoModel equipo = (EquipoModel)getItem(position);
 
@@ -59,7 +70,25 @@ public class EquipoAdapter extends BaseAdapter {
         char3.setText(equipo.getChar3().getNombre());
         char4.setText(equipo.getChar4().getNombre());
         nombre.setText(equipo.getNombre());
+        img1.setImageBitmap(getBitmapFromAssets(equipo.getChar1().getNombre().toLowerCase()));
+        img2.setImageBitmap(getBitmapFromAssets(equipo.getChar2().getNombre().toLowerCase()));
+        img3.setImageBitmap(getBitmapFromAssets(equipo.getChar3().getNombre().toLowerCase()));
+        img4.setImageBitmap(getBitmapFromAssets(equipo.getChar4().getNombre().toLowerCase()));
 
         return view;
+    }
+
+    private Bitmap getBitmapFromAssets(String fileName){
+
+        AssetManager am = context.getAssets();
+        InputStream is = null;
+        try{
+            is=am.open("personajes/" + fileName + ".png");
+            Log.i("gf", fileName);
+        }catch (IOException e){
+            e.printStackTrace();
+        }
+
+        return BitmapFactory.decodeStream(is);
     }
 }
