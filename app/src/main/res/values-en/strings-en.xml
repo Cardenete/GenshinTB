@@ -25,4 +25,31 @@
     <string name="relojPersonaje">Sand equipped:</string>
     <string name="calizPersonaje">Goblet equipped</string>
     <string name="diademaPersonaje">Crown equipped</string>
+    <string-array name="listaAtributosReloj">
+        <item>HP</item>
+        <item>Defense</item>
+        <item>Attack</item>
+        <item>Energy Recharge</item>
+        <item>Elemental Mastery</item>
+
+    </string-array>
+    <string-array name="listaAtributosCaliz">
+        <item>HP</item>
+        <item>Defense</item>
+        <item>Attack</item>
+        <item>Energy Recharge</item>
+        <item>Elemental Mastery</item>
+        <item>Physical Damage</item>
+        <item>Elemental Damage</item>
+    </string-array>
+    <string-array name="listaAtributosDiadema">
+        <item>HP</item>
+        <item>Defense</item>
+        <item>Attack</item>
+        <item>Energy Recharge</item>
+        <item>Elemental Mastery</item>
+        <item>CRIT Rate</item>
+        <item>CRIT Damage</item>
+        <item>Healing Bonus</item>
+    </string-array>
 </resources>

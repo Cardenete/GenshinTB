@@ -38,6 +38,9 @@ public class PersonajeActivity extends AppCompatActivity {
     Spinner cambioArma;
     Spinner cambioSet1;
     Spinner cambioSet2;
+    Spinner reloj;
+    Spinner caliz;
+    Spinner diadema;
 
     DataAdapter data;
     List<ArmaModel> listaArmas;
@@ -69,6 +72,9 @@ public class PersonajeActivity extends AppCompatActivity {
         cambioArma = (Spinner)findViewById(R.id.listaCambioArma);
         cambioSet1 = (Spinner)findViewById(R.id.listaCambioSet1);
         cambioSet2 = (Spinner)findViewById(R.id.listaCambioSet2);
+        reloj = (Spinner) findViewById(R.id.listaRelojPersonaje);
+        caliz = (Spinner) findViewById(R.id.listaCalizPersonaje);
+        diadema = (Spinner) findViewById(R.id.listaDiademaPersonaje);
 
 
         nombre.setText(personaje.getNombre());
@@ -83,6 +89,10 @@ public class PersonajeActivity extends AppCompatActivity {
         cambioSet1.setSelection(personaje.getSet1().getID());
         cambioSet2.setAdapter(artefactoAdapter);
         cambioSet2.setSelection(personaje.getSet2().getID());
+
+
+
+
     }
 
     private Bitmap getBitmapFromAssets(String fileName){
