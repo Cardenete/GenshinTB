@@ -44,6 +44,12 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    @Override
+    public void onRestart() {
+        super.onRestart();
+        recreate();
+
+    }
 
     public void fabOnClick(View view) {
 

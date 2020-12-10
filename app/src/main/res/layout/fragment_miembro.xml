@@ -78,15 +78,17 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/cambioPersonaje"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/botonAdd"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintBottom_toTopOf="@id/listaCambioPersonaje"
+        app:layout_constraintTop_toBottomOf="@id/detalles"
         tools:layout_editor_absoluteY="619dp" />
 
     <Spinner
         android:id="@+id/listaCambioPersonaje"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="#C6C6C6"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
@@ -98,9 +100,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Add"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/detalles"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/set1Personaje" />
+        app:layout_constraintStart_toEndOf="@+id/set1Personaje"
+        app:layout_constraintBottom_toTopOf="@id/listaCambioPersonaje" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

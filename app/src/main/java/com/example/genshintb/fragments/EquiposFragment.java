@@ -59,6 +59,9 @@ public class EquiposFragment extends Fragment {
         return view;
     }
 
+
+
+
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {

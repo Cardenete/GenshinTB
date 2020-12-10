@@ -29,6 +29,8 @@
     <string name="confirmar">Confirmar</string>
     <string name="cancelar">Cancelar</string>
     <string name="nuevoEquipo">Introduce el nombre</string>
+    <string name="mismoPersonaje">El personaje ya está en el equipo</string>
+    <string name="personajeCambiado">El personaje se ha cambiado con éxito</string>
     <string-array name="listaAtributosReloj">
         <item>Vida</item>
         <item>Defensa</item>

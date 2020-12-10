@@ -115,12 +115,18 @@ public class MiembroFragment extends Fragment {
         add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                personaje = ((PersonajeModel)personajeAElegir.getSelectedItem());
-                data.openWritable();
-                data.cambiarPersonajeEquipo(pos, personaje.getID(), equipo.getID());
-                data.close();
-                actualizarMiembro(view);
-                Toast.makeText(getActivity(), Integer.toString(pos), Toast.LENGTH_LONG).show();
+
+                PersonajeModel personajeAux = ((PersonajeModel)personajeAElegir.getSelectedItem());
+                if(!personaje.equals(personajeAux)) {
+                    personaje = personajeAux;
+                    data.openWritable();
+                    data.cambiarPersonajeEquipo(pos, personaje.getID(), equipo.getID());
+                    data.close();
+                    actualizarMiembro(view);
+                    Toast.makeText(getActivity(), R.string.personajeCambiado, Toast.LENGTH_LONG).show();
+                } else {
+                    Toast.makeText(getActivity(), R.string.mismoPersonaje, Toast.LENGTH_SHORT).show();
+                }
             }
         });
 
@@ -143,7 +149,7 @@ public class MiembroFragment extends Fragment {
 
         equipo = (EquipoModel) SingletonMap.getInstance().get("equipo");
         listaEquipo = equipo.listaMiembros();
-        //listaPersonajes.add(personaje);
+        listaPersonajes.add(personaje);
         data = new DataAdapter(getActivity().getApplicationContext());
 
         data.open();
@@ -177,7 +183,7 @@ public class MiembroFragment extends Fragment {
         data.close();
 
         personajeAElegir.setAdapter(new PersonajeAdapter(getActivity(), listaPersonajes));
-        personajeAElegir.setSelected(false);
+        personajeAElegir.setSelection(0);
 
         add = (Button)view.findViewById(R.id.botonAdd);
     }

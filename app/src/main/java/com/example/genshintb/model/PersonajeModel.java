@@ -1,5 +1,7 @@
 package com.example.genshintb.model;
 
+import java.util.Objects;
+
 public class PersonajeModel {
 
     private int ID;
@@ -112,6 +114,18 @@ public class PersonajeModel {
 
     public void setDiadema(String diadema) { Diadema = diadema; }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        PersonajeModel that = (PersonajeModel) o;
+        return ID == that.ID;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(ID);
+    }
 }
 
 
