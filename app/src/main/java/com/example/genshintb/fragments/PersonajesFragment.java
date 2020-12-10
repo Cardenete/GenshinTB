@@ -17,6 +17,7 @@ import androidx.fragment.app.ListFragment;
 
 import com.example.genshintb.activities.EquipoActivity;
 import com.example.genshintb.activities.PersonajeActivity;
+import com.example.genshintb.activities.ui.main.PersonajeAdapter;
 import com.example.genshintb.database.DataAdapter;
 import com.example.genshintb.model.ArmaModel;
 import com.example.genshintb.model.ArtefactoModel;
@@ -32,7 +33,7 @@ import java.util.Map;
 
 public class PersonajesFragment extends Fragment {
 
-    ArrayAdapter adapter;
+    PersonajeAdapter adapter;
     List<PersonajeModel> lista = new ArrayList<>();
     DataAdapter data;
     ListView lv;
@@ -52,7 +53,7 @@ public class PersonajesFragment extends Fragment {
         lv = (ListView)view.findViewById(R.id.lv_personajes);
         data = new DataAdapter(getActivity().getApplicationContext());
         viewData();
-        adapter = new ArrayAdapter<PersonajeModel>(getActivity(), android.R.layout.simple_list_item_1, lista);
+        adapter = new PersonajeAdapter(getActivity(), lista);
         lv.setAdapter(adapter);
 
         return view;

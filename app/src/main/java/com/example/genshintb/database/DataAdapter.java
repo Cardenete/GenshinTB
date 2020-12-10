@@ -99,4 +99,24 @@ public class DataAdapter {
             throw e;
         }
     }
+
+    public Cursor getArmasPorTipo(String tipo){
+        try{
+            String sql = "SELECT * FROM " + "Arma" + " WHERE tipo LIKE '" +  tipo + "'";
+            return mDb.rawQuery(sql, null);
+        }catch (SQLException e){
+            Log.e(TAG, "getTestData >>"+ mDbHelper.DB_FILE + " "+ e.toString());
+            throw e;
+        }
+    }
+
+    public Cursor getArtefactosAll(){
+        try{
+            String sql = "SELECT * FROM Artefacto";
+            return mDb.rawQuery(sql, null);
+        }catch (SQLException e){
+            Log.e(TAG, "getTestData >>"+ mDbHelper.DB_FILE + " "+ e.toString());
+            throw e;
+        }
+    }
 }

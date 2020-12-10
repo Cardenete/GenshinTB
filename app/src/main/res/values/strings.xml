@@ -19,4 +19,10 @@
     <string name="title_activity_equipo">EquipoActivity</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="arma">Arma equipada:</string>
+    <string name="cambioSet1">Primer set seleccionado:</string>
+    <string name="cambioSet2">Segundo set seleccionado</string>
+    <string name="relojPersonaje">Reloj equipado:</string>
+    <string name="calizPersonaje">Cáliz equipado:</string>
+    <string name="diademaPersonaje">Diadema equipada:</string>
 </resources>

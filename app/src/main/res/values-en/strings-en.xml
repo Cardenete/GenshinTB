@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">GenshinTB</string>
+    <string name="action_settings">Settings</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="previous">Previous</string>
+
+    <string name="personajeDescription">Character\'s Portrait</string>
+    <string name="elementoDescription">Character\'s Element</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="tab_text_1">Teams</string>
+    <string name="tab_text_2">Characters</string>
+    <string name="tab_text_3">Placeholder</string>
+    <string name="tab_text_4">Personajes</string>
+    <string name="detalles">Details</string>
+    <string name="estrella">Stars</string>
+    <string name="cambioPersonaje">Change character:</string>
+    <string name="title_activity_equipo">EquipoActivity</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="arma">Weapon Equipped:</string>
+    <string name="cambioSet1">First set selected:</string>
+    <string name="cambioSet2">Second set selected:</string>
+    <string name="relojPersonaje">Sand equipped:</string>
+    <string name="calizPersonaje">Goblet equipped</string>
+    <string name="diademaPersonaje">Crown equipped</string>
+</resources>
