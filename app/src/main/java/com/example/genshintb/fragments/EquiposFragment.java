@@ -73,7 +73,6 @@ public class EquiposFragment extends Fragment {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 EquipoModel equipo = (EquipoModel)adapter.getItem(position);
                 SingletonMap.getInstance().put("equipo", equipo);
-                Toast.makeText(getActivity(), Integer.toString(equipo.getID()), Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(getActivity().getApplicationContext(), EquipoActivity.class);
                 startActivity(intent);
             }

@@ -13,7 +13,9 @@
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@id/pers2"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/pers1Imagen"
+        />
 
     <TextView
         android:id="@+id/pers2"
@@ -23,7 +25,8 @@
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@id/pers3"
-        app:layout_constraintStart_toEndOf="@+id/pers1" />
+        app:layout_constraintStart_toEndOf="@+id/pers1"
+        app:layout_constraintTop_toBottomOf="@id/pers2Imagen"/>
 
     <TextView
         android:id="@+id/pers3"
@@ -33,7 +36,8 @@
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@id/pers4"
-        app:layout_constraintStart_toEndOf="@+id/pers2" />
+        app:layout_constraintStart_toEndOf="@+id/pers2"
+        app:layout_constraintTop_toBottomOf="@id/pers3Imagen"/>
 
     <TextView
         android:id="@+id/pers4"
@@ -43,7 +47,8 @@
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/pers3" />
+        app:layout_constraintStart_toEndOf="@+id/pers3"
+        app:layout_constraintTop_toBottomOf="@id/pers4Imagen"/>
 
     <TextView
         android:id="@+id/nombre"
@@ -63,6 +68,7 @@
         app:layout_constraintBottom_toTopOf="@+id/pers1"
         app:layout_constraintEnd_toEndOf="@+id/pers1"
         app:layout_constraintStart_toStartOf="@+id/pers1"
+        app:layout_constraintTop_toBottomOf="@id/nombre"
         tools:srcCompat="@tools:sample/avatars"
         android:contentDescription="@string/miembroDescripcion"/>
 
@@ -73,6 +79,7 @@
         app:layout_constraintBottom_toTopOf="@+id/pers2"
         app:layout_constraintEnd_toEndOf="@+id/pers2"
         app:layout_constraintStart_toStartOf="@+id/pers2"
+        app:layout_constraintTop_toBottomOf="@id/nombre"
         tools:srcCompat="@tools:sample/avatars"
         android:contentDescription="@string/miembroDescripcion"/>
 
@@ -83,6 +90,7 @@
         app:layout_constraintBottom_toTopOf="@+id/pers3"
         app:layout_constraintEnd_toEndOf="@+id/pers3"
         app:layout_constraintStart_toStartOf="@+id/pers3"
+        app:layout_constraintTop_toBottomOf="@id/nombre"
         tools:srcCompat="@tools:sample/avatars"
         android:contentDescription="@string/miembroDescripcion"/>
 
@@ -93,6 +101,7 @@
         app:layout_constraintBottom_toTopOf="@+id/pers4"
         app:layout_constraintEnd_toEndOf="@+id/pers4"
         app:layout_constraintStart_toStartOf="@+id/pers4"
+        app:layout_constraintTop_toBottomOf="@id/nombre"
         tools:srcCompat="@tools:sample/avatars"
         android:contentDescription="@string/miembroDescripcion"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

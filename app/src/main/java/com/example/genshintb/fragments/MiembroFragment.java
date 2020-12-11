@@ -35,6 +35,7 @@ import com.example.genshintb.model.ArtefactoModel;
 import com.example.genshintb.model.EquipoModel;
 import com.example.genshintb.model.PersonajeModel;
 import com.example.genshintb.util.SingletonMap;
+import com.google.android.material.tabs.TabLayout;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -96,21 +97,7 @@ public class MiembroFragment extends Fragment {
             }
         });
 
-        /*personajeAElegir.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                check++;
-                if(check > 1){
-                    personaje = ((PersonajeModel)personajeAElegir.getSelectedItem());
-                    prueba(getView());
-                    data.cambiarPersonajeEquipo(pos, personaje.getID(), equipo.getID());
-                    check=0;
-                }
-            }
-            @Override
-            public void onNothingSelected(AdapterView<?> parent) {
-            }
-        });*/
+
 
         add.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -209,17 +196,7 @@ public class MiembroFragment extends Fragment {
         }
     }
 
-    /*private PersonajeModel viewPersonaje(int id){
-        Cursor cursor = data.getPersonaje(id);
-        if(cursor.moveToFirst()){
-            return new PersonajeModel(cursor.getInt(0), cursor.getString(1), cursor.getInt(2),
-                            cursor.getString(3), cursor.getString(4), viewArma(cursor.getInt(5)),
-                            viewArtefacto(cursor.getInt(6)), viewArtefacto(cursor.getInt(7)),
-                            cursor.getString(8), cursor.getString(9), cursor.getString(10));
-        }else{
-            return new PersonajeModel();
-        }
-    }*/
+
 
     private Bitmap getBitmapFromAssets(String fileName){
 
@@ -247,6 +224,9 @@ public class MiembroFragment extends Fragment {
 
         foto = (ImageView) view.findViewById(R.id.fotoPersonaje);
         foto.setImageBitmap(getBitmapFromAssets("personajes/" + personaje.getNombre().toLowerCase()));
+
+        TabLayout tab = (TabLayout) SingletonMap.getInstance().get("tab");
+        tab.getTabAt(pos-1).setText(personaje.getNombre());
     }
 
 }

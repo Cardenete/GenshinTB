@@ -1,297 +1,338 @@
 <?xml version="1.0" encoding="utf-8"?>
 
+
+
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         tools:context=".fragments.MiembroFragment">
 
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/linearlayout"
-            android:layout_width="344dp"
-            android:layout_height="135dp"
-            android:orientation="horizontal"
-            android:translationY="-40dp"
-            app:layout_constraintBottom_toTopOf="@id/listaCambioArma"
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/appBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:theme="@style/Theme.GenshinTB.AppBarOverlay"
+            app:layout_constraintBottom_toTopOf="@id/mainLayout"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.489"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/imagenPersonaje">
+            app:layout_constraintTop_toTopOf="parent">
 
-            <TextView
-                android:id="@+id/tipoArmaPersonaje"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
 
-                android:layout_alignParentTop="true"
-                android:layout_alignParentEnd="true"
-                android:layout_alignParentBottom="true"
-                android:text="@string/tab_text_3"
-                android:textSize="22sp"
-                app:layout_constraintBottom_toBottomOf="parent"
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:minHeight="?actionBarSize"
+        android:padding="@dimen/appbar_padding"
+        android:text="@string/app_name"
+        android:textAppearance="@style/TextAppearance.Widget.AppCompat.Toolbar.Title" />
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/mainLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:context=".fragments.MiembroFragment"
+            app:layout_constraintTop_toBottomOf="@id/appBar"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            >
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/linearlayout"
+                android:layout_width="344dp"
+                android:layout_height="135dp"
+                android:orientation="horizontal"
+                android:translationY="-40dp"
+                app:layout_constraintBottom_toTopOf="@id/listaCambioArma"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintHorizontal_bias="0.489"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/imagenPersonaje">
 
-            <TextView
-                android:id="@+id/elementoPersonaje"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentTop="true"
-                android:layout_alignParentEnd="true"
-                android:layout_alignParentBottom="true"
-                android:text="@string/tab_text_3"
-                android:textAlignment="viewStart"
-                android:textSize="22sp"
-                android:translationX="-20dp"
-                app:layout_constraintBottom_toBottomOf="@+id/elemetoPersonajeIcon"
-                app:layout_constraintStart_toEndOf="@+id/elemetoPersonajeIcon"
-                app:layout_constraintTop_toTopOf="@+id/elemetoPersonajeIcon" />
+                <TextView
+                    android:id="@+id/tipoArmaPersonaje"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentBottom="true"
+                    android:text="@string/tab_text_3"
+                    android:textSize="18sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/elementoPersonaje"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentBottom="true"
+                    android:text="@string/tab_text_3"
+                    android:textAlignment="viewStart"
+                    android:textSize="18sp"
+                    android:translationX="-20dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/elemetoPersonajeIcon"
+                    app:layout_constraintStart_toEndOf="@+id/elemetoPersonajeIcon"
+                    app:layout_constraintTop_toTopOf="@+id/elemetoPersonajeIcon" />
+
+                <ImageView
+                    android:id="@+id/estrellasIcon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentBottom="true"
+
+                    android:contentDescription="@string/estrella"
+                    android:src="@android:drawable/btn_star_big_on"
+                    app:layout_constraintBottom_toBottomOf="@+id/numEstrellas"
+                    app:layout_constraintStart_toEndOf="@+id/numEstrellas"
+                    app:layout_constraintTop_toTopOf="@+id/numEstrellas" />
+
+                <TextView
+                    android:id="@+id/nombrePersonaje"
+                    android:layout_width="205dp"
+                    android:layout_height="59dp"
+
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentEnd="true"
+                    android:text="@string/tab_text_3"
+                    android:textAlignment="center"
+                    android:textSize="24sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/numEstrellas"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignTop="@+id/estrellasIcon"
+                    android:layout_alignBottom="@+id/estrellasIcon"
+                    android:layout_alignParentStart="true"
+                    android:text="@string/tab_text_3"
+                    android:textSize="22sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/elemetoPersonajeIcon"
+                    android:layout_width="60dp"
+                    android:layout_height="70dp"
+
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentBottom="true"
+                    android:contentDescription="@string/elementoDescription"
+                    android:src="@android:drawable/ic_menu_compass"
+                    android:translationX="-20dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/element_pyro" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
 
             <ImageView
-                android:id="@+id/estrellasIcon"
-                android:layout_width="wrap_content"
-                android:layout_height="50dp"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentTop="true"
-                android:layout_alignParentBottom="true"
-
-                android:contentDescription="@string/estrella"
-                android:src="@android:drawable/btn_star_big_on"
-                app:layout_constraintBottom_toBottomOf="@+id/numEstrellas"
-                app:layout_constraintStart_toEndOf="@+id/numEstrellas"
-                app:layout_constraintTop_toTopOf="@+id/numEstrellas" />
-
-            <TextView
-                android:id="@+id/nombrePersonaje"
-                android:layout_width="205dp"
-                android:layout_height="59dp"
-
-                android:layout_alignParentStart="true"
-                android:layout_alignParentTop="true"
-                android:layout_alignParentEnd="true"
-                android:text="@string/tab_text_3"
-                android:textAlignment="center"
-                android:textSize="24sp"
+                android:id="@+id/imagenPersonaje"
+                android:layout_width="298dp"
+                android:layout_height="293dp"
+                android:contentDescription="@string/personajeDescription"
+                android:translationY="-25dp"
+                app:layout_constraintBottom_toTopOf="@id/linearlayout"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <TextView
-                android:id="@+id/numEstrellas"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignTop="@+id/estrellasIcon"
-                android:layout_alignBottom="@+id/estrellasIcon"
-                android:layout_alignParentStart="true"
-                android:text="@string/tab_text_3"
-                android:textSize="22sp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <ImageView
-                android:id="@+id/elemetoPersonajeIcon"
-                android:layout_width="60dp"
-                android:layout_height="70dp"
-
-                android:layout_alignParentStart="true"
-                android:layout_alignParentTop="true"
-                android:layout_alignParentEnd="true"
-                android:layout_alignParentBottom="true"
-                android:contentDescription="@string/elementoDescription"
-                android:src="@android:drawable/ic_menu_compass"
-                android:translationX="-20dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.515"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@drawable/element_pyro" />
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
-        <ImageView
-            android:id="@+id/imagenPersonaje"
-            android:layout_width="298dp"
-            android:layout_height="293dp"
-            android:contentDescription="@string/personajeDescription"
-            android:translationY="-25dp"
-            app:layout_constraintBottom_toTopOf="@id/linearlayout"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.515"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_chainStyle="spread"
-            app:srcCompat="@drawable/char_amber"
-            tools:src="@tools:sample/avatars" />
-
-        <Spinner
-            android:id="@+id/listaCambioArma"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-
-            android:background="#C6C6C6"
-            android:popupBackground="#C6C6C6"
-            android:translationY="-40dp"
-            app:layout_constraintBottom_toTopOf="@id/listaCambioSet1"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/linearlayout"
-            app:layout_constraintVertical_bias="1.0" />
-
-        <TextView
-            android:id="@+id/set1Personaje"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="24dp"
-            android:text="@string/cambioSet1"
-            android:translationY="-40dp"
-            app:layout_constraintBottom_toBottomOf="@+id/listaCambioSet1"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
-
-        <TextView
-            android:id="@+id/armaPersonaje"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/arma"
-            android:translationY="-40dp"
-            app:layout_constraintBottom_toTopOf="@+id/listaCambioArma"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.503"
-            app:layout_constraintStart_toStartOf="parent" />
-
-        <Spinner
-            android:id="@+id/listaCambioSet1"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-
-            android:background="#C6C6C6"
-            android:popupBackground="#c6c6c6"
-            android:translationY="-40dp"
-            app:layout_constraintBottom_toTopOf="@+id/listaCambioSet2"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/listaCambioArma" />
-
-        <TextView
-            android:id="@+id/set2Personaje"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/cambioSet2"
-            android:translationY="-40dp"
-            app:layout_constraintBottom_toTopOf="@+id/listaCambioSet2"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
-
-        <Spinner
-            android:id="@+id/listaCambioSet2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="#c6c6c6"
-            android:popupBackground="#c6c6c6"
-            android:translationY="-40dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/listaCambioSet1" />
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/listaCambioSet2">
+                app:layout_constraintVertical_chainStyle="spread"
+                app:srcCompat="@drawable/char_amber"
+                tools:src="@tools:sample/avatars" />
 
             <Spinner
-                android:id="@+id/listaRelojPersonaje"
-                android:layout_width="wrap_content"
+                android:id="@+id/listaCambioArma"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:entries="@array/listaAtributosReloj"
-                android:translationY="-5dp"
-                app:layout_constraintBottom_toTopOf="@id/listaCalizPersonaje"
+
+                android:layout_marginHorizontal="10dp"
+                android:background="#C6C6C6"
+                android:popupBackground="#C6C6C6"
+                android:translationY="-40dp"
+                app:layout_constraintBottom_toTopOf="@id/listaCambioSet1"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@id/relojPersonaje"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/linearlayout"
+                app:layout_constraintVertical_bias="1.0" />
 
-            <Spinner
-                android:id="@+id/listaCalizPersonaje"
+            <TextView
+                android:id="@+id/set1Personaje"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:entries="@array/listaAtributosCaliz"
-                android:translationY="-5dp"
-                app:layout_constraintBottom_toTopOf="@id/listaDiademaPersonaje"
+                android:layout_marginBottom="24dp"
+                android:text="@string/cambioSet1"
+                android:translationY="-40dp"
+                app:layout_constraintBottom_toBottomOf="@+id/listaCambioSet1"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@id/calizPersonaje"
-                app:layout_constraintTop_toBottomOf="@id/listaRelojPersonaje" />
+                app:layout_constraintStart_toStartOf="parent" />
 
-            <Spinner
-                android:id="@+id/listaDiademaPersonaje"
+            <TextView
+                android:id="@+id/armaPersonaje"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:entries="@array/listaAtributosDiadema"
-                android:translationY="-5dp"
+                android:text="@string/arma"
+                android:translationY="-40dp"
+                app:layout_constraintBottom_toTopOf="@+id/listaCambioArma"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.503"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <Spinner
+                android:id="@+id/listaCambioSet1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:layout_marginHorizontal="10dp"
+                android:background="#C6C6C6"
+                android:popupBackground="#c6c6c6"
+                android:translationY="-40dp"
+                app:layout_constraintBottom_toTopOf="@+id/listaCambioSet2"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/listaCambioArma" />
+
+            <TextView
+                android:id="@+id/set2Personaje"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/cambioSet2"
+                android:translationY="-40dp"
+                app:layout_constraintBottom_toTopOf="@+id/listaCambioSet2"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <Spinner
+                android:id="@+id/listaCambioSet2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="10dp"
+                android:background="#c6c6c6"
+                android:popupBackground="#c6c6c6"
+                android:translationY="-40dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@id/diademaPersonaje"
-                app:layout_constraintTop_toBottomOf="@id/listaCalizPersonaje" />
-
-            <TextView
-                android:id="@+id/relojPersonaje"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/relojPersonaje"
-                android:translationY="-5dp"
-                app:layout_constraintBottom_toTopOf="@id/calizPersonaje"
-                app:layout_constraintEnd_toStartOf="@id/listaRelojPersonaje"
+                app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toBottomOf="@id/listaCambioSet1" />
 
-            <TextView
-                android:id="@+id/calizPersonaje"
+            <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/calizPersonaje"
-                android:translationY="-5dp"
-                app:layout_constraintBottom_toTopOf="@id/diademaPersonaje"
-                app:layout_constraintEnd_toStartOf="@id/listaCalizPersonaje"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/relojPersonaje" />
-
-            <TextView
-                android:id="@+id/diademaPersonaje"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/diademaPersonaje"
-                android:translationY="-5dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="16dp"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toStartOf="@id/listaDiademaPersonaje"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/calizPersonaje" />
+                app:layout_constraintTop_toBottomOf="@id/listaCambioSet2">
+
+                <Spinner
+                    android:id="@+id/listaRelojPersonaje"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:entries="@array/listaAtributosReloj"
+                    android:translationY="-5dp"
+                    app:layout_constraintBottom_toTopOf="@id/listaCalizPersonaje"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/relojPersonaje"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <Spinner
+                    android:id="@+id/listaCalizPersonaje"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:entries="@array/listaAtributosCaliz"
+                    android:translationY="-5dp"
+                    app:layout_constraintBottom_toTopOf="@id/listaDiademaPersonaje"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/calizPersonaje"
+                    app:layout_constraintTop_toBottomOf="@id/listaRelojPersonaje" />
+
+                <Spinner
+                    android:id="@+id/listaDiademaPersonaje"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:entries="@array/listaAtributosDiadema"
+                    android:translationY="-5dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/diademaPersonaje"
+                    app:layout_constraintTop_toBottomOf="@id/listaCalizPersonaje" />
+
+                <TextView
+                    android:id="@+id/relojPersonaje"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/relojPersonaje"
+                    android:translationY="-5dp"
+                    app:layout_constraintBottom_toTopOf="@id/calizPersonaje"
+                    app:layout_constraintEnd_toStartOf="@id/listaRelojPersonaje"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/calizPersonaje"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/calizPersonaje"
+                    android:translationY="-5dp"
+                    app:layout_constraintBottom_toTopOf="@id/diademaPersonaje"
+                    app:layout_constraintEnd_toStartOf="@id/listaCalizPersonaje"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/relojPersonaje" />
+
+                <TextView
+                    android:id="@+id/diademaPersonaje"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/diademaPersonaje"
+                    android:translationY="-5dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@id/listaDiademaPersonaje"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/calizPersonaje" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <Button
+                android:id="@+id/bEquipar"
+                android:layout_width="wrap_content"
+                android:layout_height="35dp"
+                android:text="@string/equipar"
+                android:translationY="-40dp"
+                app:layout_constraintBottom_toTopOf="@+id/armaPersonaje"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/linearlayout" />
+
         </androidx.constraintlayout.widget.ConstraintLayout>
-
-        <Button
-            android:id="@+id/bEquipar"
-            android:layout_width="wrap_content"
-            android:layout_height="35dp"
-            android:text="@string/equipar"
-            android:translationY="-40dp"
-            app:layout_constraintBottom_toTopOf="@+id/armaPersonaje"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/linearlayout" />
-
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </ScrollView>
