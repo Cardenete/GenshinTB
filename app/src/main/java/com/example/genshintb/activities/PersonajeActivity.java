@@ -175,7 +175,7 @@ public class PersonajeActivity extends AppCompatActivity {
     }
 
     private void actualizarEquipamiento(){
-        cambioArma.setSelection(personaje.getArma().getID() % listaArmas.size());
+        cambioArma.setSelection(personaje.getArma().getID()-1 % listaArmas.size());
         cambioSet1.setSelection(personaje.getSet1().getID()-1 % listaArtefactos.size());
         cambioSet2.setSelection(personaje.getSet2().getID()-1 % listaArtefactos.size());
         String[] aux = getResources().getStringArray(R.array.listaAtributosReloj);
