@@ -64,9 +64,9 @@ public class DataAdapter {
 
     public Cursor getAllPersonajes(){
         try{
-            String sql = "SELECT * FROM " + "Personaje";
-            Cursor cursor = mDb.rawQuery(sql, null);
-            return cursor;
+            return mDb.query("Personaje", null, null, null,
+                            null, null, null);
+            //return cursor;
         }catch (SQLException e){
             Log.e(TAG, "getTestData >>"+ mDbHelper.DB_FILE + " "+ e.toString());
             throw e;
@@ -75,9 +75,8 @@ public class DataAdapter {
 
     public Cursor getAllEquipos(){
         try{
-            String sql = "SELECT * FROM " + "Equipo";
-            Cursor cursor = mDb.rawQuery(sql, null);
-            return cursor;
+            return mDb.query("Equipo", null, null, null,
+                            null, null, null);
         }catch (SQLException e){
             Log.e(TAG, "getTestData >>"+ mDbHelper.DB_FILE + " "+ e.toString());
             throw e;
@@ -86,8 +85,8 @@ public class DataAdapter {
 
     public Cursor getPersonaje(int id){
         try{
-            String sql = "SELECT * FROM " + "Personaje" + " WHERE id=" +  Integer.toString(id);
-            return mDb.rawQuery(sql, null);
+            return mDb.query("Personaje", null, "id=?", new String[]{Integer.toString(id)},
+                            null, null, null);
         }catch (SQLException e){
             Log.e(TAG, "getTestData >>"+ mDbHelper.DB_FILE + " "+ e.toString());
             throw e;
@@ -96,8 +95,8 @@ public class DataAdapter {
 
     public Cursor getArma(int id){
         try{
-            String sql = "SELECT * FROM " + "Arma" + " WHERE id=" +  Integer.toString(id);
-            return mDb.rawQuery(sql, null);
+            return mDb.query("Arma", null, "id=?", new String[]{Integer.toString(id)},
+                    null, null, null);
         }catch (SQLException e){
             Log.e(TAG, "getTestData >>"+ mDbHelper.DB_FILE + " "+ e.toString());
             throw e;
@@ -106,8 +105,8 @@ public class DataAdapter {
 
     public Cursor getArtefacto(int id){
         try{
-            String sql = "SELECT * FROM " + "Artefacto" + " WHERE id=" +  Integer.toString(id);
-            return mDb.rawQuery(sql, null);
+            return mDb.query("Artefacto", null, "id=?", new String[]{Integer.toString(id)},
+                    null, null, null);
         }catch (SQLException e){
             Log.e(TAG, "getTestData >>"+ mDbHelper.DB_FILE + " "+ e.toString());
             throw e;
@@ -116,8 +115,8 @@ public class DataAdapter {
 
     public Cursor getArmasPorTipo(String tipo){
         try{
-            String sql = "SELECT * FROM " + "Arma" + " WHERE tipo LIKE '" +  tipo + "'";
-            return mDb.rawQuery(sql, null);
+            return mDb.query("Arma", null, "tipo=?", new String[]{tipo},
+                    null, null, null);
         }catch (SQLException e){
             Log.e(TAG, "getTestData >>"+ mDbHelper.DB_FILE + " "+ e.toString());
             throw e;
@@ -126,8 +125,8 @@ public class DataAdapter {
 
     public Cursor getArtefactosAll(){
         try{
-            String sql = "SELECT * FROM Artefacto";
-            return mDb.rawQuery(sql, null);
+            return mDb.query("Artefacto", null, null, null,
+                    null, null, null);
         }catch (SQLException e){
             Log.e(TAG, "getTestData >>"+ mDbHelper.DB_FILE + " "+ e.toString());
             throw e;

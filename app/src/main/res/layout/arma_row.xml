@@ -31,7 +31,8 @@
         app:layout_constraintBottom_toBottomOf="@+id/numEstrellasArma"
         app:layout_constraintStart_toEndOf="@+id/numEstrellasArma"
         app:layout_constraintTop_toTopOf="@+id/numEstrellasArma"
-        app:srcCompat="@android:drawable/btn_star_big_on" />
+        app:srcCompat="@android:drawable/btn_star_big_on"
+        android:contentDescription="@string/estrellaDescripcion"/>
 
     <TextView
         android:id="@+id/statArmaRow"

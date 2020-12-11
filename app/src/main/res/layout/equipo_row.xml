@@ -63,7 +63,8 @@
         app:layout_constraintBottom_toTopOf="@+id/pers1"
         app:layout_constraintEnd_toEndOf="@+id/pers1"
         app:layout_constraintStart_toStartOf="@+id/pers1"
-        tools:srcCompat="@tools:sample/avatars" />
+        tools:srcCompat="@tools:sample/avatars"
+        android:contentDescription="@string/miembroDescripcion"/>
 
     <ImageView
         android:id="@+id/pers2Imagen"
@@ -72,7 +73,8 @@
         app:layout_constraintBottom_toTopOf="@+id/pers2"
         app:layout_constraintEnd_toEndOf="@+id/pers2"
         app:layout_constraintStart_toStartOf="@+id/pers2"
-        tools:srcCompat="@tools:sample/avatars" />
+        tools:srcCompat="@tools:sample/avatars"
+        android:contentDescription="@string/miembroDescripcion"/>
 
     <ImageView
         android:id="@+id/pers3Imagen"
@@ -81,7 +83,8 @@
         app:layout_constraintBottom_toTopOf="@+id/pers3"
         app:layout_constraintEnd_toEndOf="@+id/pers3"
         app:layout_constraintStart_toStartOf="@+id/pers3"
-        tools:srcCompat="@tools:sample/avatars" />
+        tools:srcCompat="@tools:sample/avatars"
+        android:contentDescription="@string/miembroDescripcion"/>
 
     <ImageView
         android:id="@+id/pers4Imagen"
@@ -90,5 +93,6 @@
         app:layout_constraintBottom_toTopOf="@+id/pers4"
         app:layout_constraintEnd_toEndOf="@+id/pers4"
         app:layout_constraintStart_toStartOf="@+id/pers4"
-        tools:srcCompat="@tools:sample/avatars" />
+        tools:srcCompat="@tools:sample/avatars"
+        android:contentDescription="@string/miembroDescripcion"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

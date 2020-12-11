@@ -35,6 +35,10 @@
     <string name="equipoCreado">created successfully</string>
     <string name="borrarEquipo">Do you want to delete this team?</string>
     <string name="borradoExito">The team has been deleted successfully</string>
+    <string name="estrellaDescripcion">Image of a star</string>
+    <string name="miembroDescripcion">Picture of the team member</string>
+    <string name="botonAdd">Add character</string>
+
     <string-array name="listaAtributosReloj">
         <item>HP</item>
         <item>Defense</item>
@@ -47,16 +51,14 @@
         <item>HP</item>
         <item>Defense</item>
         <item>Attack</item>
-        <item>Energy Recharge</item>
-        <item>Elemental Mastery</item>
         <item>Physical Damage</item>
         <item>Elemental Damage</item>
+        <item>Elemental Mastery</item>
     </string-array>
     <string-array name="listaAtributosDiadema">
         <item>HP</item>
         <item>Defense</item>
         <item>Attack</item>
-        <item>Energy Recharge</item>
         <item>Elemental Mastery</item>
         <item>CRIT Rate</item>
         <item>CRIT Damage</item>
