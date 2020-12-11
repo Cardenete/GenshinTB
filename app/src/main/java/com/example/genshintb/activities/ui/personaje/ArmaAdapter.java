@@ -50,7 +50,7 @@ public class ArmaAdapter extends BaseAdapter {
         TextView estrellas = (TextView)view.findViewById(R.id.numEstrellasArma);
         TextView stat = (TextView)view.findViewById(R.id.statArmaRow);
 
-        ArmaModel arma = (ArmaModel)getItem(position);
+        ArmaModel arma = (ArmaModel)getItem(position % data.size());
 
         nombreArma.setText(arma.getNombre());
         estrellas.setText(Integer.toString(arma.getEstrellas()));

@@ -143,4 +143,20 @@ public class DataAdapter {
             e.printStackTrace();
         }
     }
+
+    public void equiparObjetos(int personaje, int arma, int set1, int set2, String reloj,
+                               String caliz, String diadema){
+        try{
+            ContentValues cv = new ContentValues();
+            cv.put("arma", arma);
+            cv.put("set1", set1);
+            cv.put("set2", set2);
+            cv.put("reloj", reloj);
+            cv.put("caliz", caliz);
+            cv.put("diadema", diadema);
+            mDb.update("Personaje", cv, "id=?", new String[]{Integer.toString(personaje)});
+        }catch (SQLException e){
+            e.printStackTrace();
+        }
+    }
 }

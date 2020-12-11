@@ -30,6 +30,7 @@
     <string name="nuevoEquipo">Introduce name</string>
     <string name="mismoPersonaje">This character is already in this team</string>
     <string name="personajeCambiado">The character has been changed successfully</string>
+    <string name="equipar">Equip items</string>
     <string-array name="listaAtributosReloj">
         <item>HP</item>
         <item>Defense</item>

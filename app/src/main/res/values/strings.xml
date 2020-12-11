@@ -31,6 +31,7 @@
     <string name="nuevoEquipo">Introduce el nombre</string>
     <string name="mismoPersonaje">El personaje ya está en el equipo</string>
     <string name="personajeCambiado">El personaje se ha cambiado con éxito</string>
+    <string name="equipar">Equipar objetos</string>
     <string-array name="listaAtributosReloj">
         <item>Vida</item>
         <item>Defensa</item>
