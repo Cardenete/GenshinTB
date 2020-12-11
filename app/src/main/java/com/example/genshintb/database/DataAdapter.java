@@ -159,4 +159,19 @@ public class DataAdapter {
             e.printStackTrace();
         }
     }
+
+    public void crearEquipo(String nombre){
+        try{
+            ContentValues cv = new ContentValues();
+            cv.put("personaje1", 19);
+            cv.put("personaje2", 1);
+            cv.put("personaje3", 12);
+            cv.put("personaje4", 9);
+            cv.put("nombre", nombre);
+            mDb.insert("Equipo", null, cv);
+        }catch(SQLException e){
+            e.printStackTrace();
+        }
+
+    }
 }

@@ -26,12 +26,13 @@ import com.example.genshintb.activities.ui.main.SectionsPagerAdapter;
 public class MainActivity extends AppCompatActivity {
 
     private String m_Text;
+    DataAdapter data;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        DataAdapter data = new DataAdapter(getApplicationContext());
+        data = new DataAdapter(getApplicationContext());
         data.createDatabase();
         SectionsPagerAdapter sectionsPagerAdapter = new SectionsPagerAdapter(this, getSupportFragmentManager());
         ViewPager viewPager = findViewById(R.id.view_pager);
@@ -68,7 +69,12 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(DialogInterface dialog, int which) {
                 m_Text = input.getText().toString();
                 dialog.dismiss();
-                Toast.makeText(getApplicationContext(), m_Text, Toast.LENGTH_SHORT).show();
+                /*Toast.makeText(getApplicationContext(), m_Text, Toast.LENGTH_SHORT).show();*/
+                data.openWritable();
+                data.crearEquipo(m_Text);
+                data.close();
+                String mensaje = getResources().getString(R.string.equipo) + " " + m_Text + " " + getResources().getString(R.string.equipoCreado);
+                Toast.makeText(getApplicationContext(), mensaje, Toast.LENGTH_SHORT).show();
             }
         });
         builder.setNegativeButton(R.string.cancelar, new DialogInterface.OnClickListener() {
