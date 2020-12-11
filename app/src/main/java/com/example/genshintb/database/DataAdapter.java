@@ -174,4 +174,10 @@ public class DataAdapter {
         }
 
     }
+
+    public void borrarEquipo(int ID){
+        this.openWritable();
+        mDb.delete("Equipo", "id=?", new String[]{Integer.toString(ID)} );
+        this.close();
+    }
 }

@@ -75,6 +75,7 @@ public class MainActivity extends AppCompatActivity {
                 data.close();
                 String mensaje = getResources().getString(R.string.equipo) + " " + m_Text + " " + getResources().getString(R.string.equipoCreado);
                 Toast.makeText(getApplicationContext(), mensaje, Toast.LENGTH_SHORT).show();
+                recreate();
             }
         });
         builder.setNegativeButton(R.string.cancelar, new DialogInterface.OnClickListener() {

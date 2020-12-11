@@ -32,6 +32,8 @@
     <string name="mismoPersonaje">El personaje ya está en el equipo</string>
     <string name="personajeCambiado">El personaje se ha cambiado con éxito</string>
     <string name="equipar">Equipar objetos</string>
+    <string name="borrarEquipo">¿Deseas borrar el equipo?</string>
+    <string name="borradoExito">El equipo se ha borrado con éxito</string>
     <string name="equipo">Equipo</string>
     <string name="equipoCreado">creado correctamente</string>
     <string-array name="listaAtributosReloj">

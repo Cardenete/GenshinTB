@@ -1,13 +1,17 @@
 package com.example.genshintb.fragments;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.CursorIndexOutOfBoundsException;
 import android.os.Bundle;
+import android.text.InputType;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
+import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -72,6 +76,41 @@ public class EquiposFragment extends Fragment {
                 Toast.makeText(getActivity(), Integer.toString(equipo.getID()), Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(getActivity().getApplicationContext(), EquipoActivity.class);
                 startActivity(intent);
+            }
+        });
+        lv.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+
+
+
+            @Override
+            public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id){
+                EquipoModel equipo = (EquipoModel)adapter.getItem(position);
+                AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+                builder.setTitle(R.string.borrarEquipo);
+
+
+
+
+
+
+                // Set up the buttons
+                builder.setPositiveButton(R.string.confirmar, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+
+                        data.borrarEquipo(equipo.getID());
+                        Toast.makeText(getActivity(), R.string.borradoExito, Toast.LENGTH_SHORT).show();
+                        getActivity().recreate();
+                    }
+                });
+                builder.setNegativeButton(R.string.cancelar, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.cancel();
+                    }
+                });
+                builder.show();
+                return true;
             }
         });
     }
