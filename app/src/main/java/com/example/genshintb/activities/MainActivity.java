@@ -54,7 +54,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void fabOnClick(View view) {
 
-        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        AlertDialog.Builder builder = new AlertDialog.Builder(this, R.style.AlertDialogCustom);
         builder.setTitle(R.string.nuevoEquipo);
 
 
