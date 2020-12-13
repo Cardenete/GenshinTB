@@ -29,10 +29,6 @@ public class EquipoActivity extends AppCompatActivity {
         TabLayout tabs = findViewById(R.id.tabs);
         tabs.setupWithViewPager(viewPager);
         SingletonMap.getInstance().put("tab", tabs);
-
-
-
-
     }
 
 

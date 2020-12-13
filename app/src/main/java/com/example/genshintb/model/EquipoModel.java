@@ -54,6 +54,21 @@ public class EquipoModel {
         return lista;
     }
 
+    public void setCharacter(int pos, PersonajeModel personaje){
+        switch (pos){
+            case 1:
+                setChar1(personaje);
+            case 2:
+                setChar2(personaje);
+            case 3:
+                setChar3(personaje);
+            case 4:
+                setChar4(personaje);
+            default:
+
+        }
+    }
+
 
     public int getID() {
         return ID;

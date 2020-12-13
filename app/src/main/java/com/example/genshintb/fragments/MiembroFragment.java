@@ -1,5 +1,6 @@
 package com.example.genshintb.fragments;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.content.res.AssetManager;
 import android.database.Cursor;
@@ -102,13 +103,14 @@ public class MiembroFragment extends Fragment {
         add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                equipo = ((EquipoModel)SingletonMap.getInstance().get("equipo"));
                 PersonajeModel personajeAux = ((PersonajeModel)personajeAElegir.getSelectedItem());
-                if(!personaje.equals(personajeAux)) {
+                if(!equipo.listaMiembros().contains(personajeAux)) {
                     personaje = personajeAux;
                     data.openWritable();
                     data.cambiarPersonajeEquipo(pos, personaje.getID(), equipo.getID());
                     data.close();
+                    equipo.setCharacter(pos, personaje);
                     actualizarMiembro(view);
                     Toast.makeText(getActivity(), R.string.personajeCambiado, Toast.LENGTH_LONG).show();
                 } else {
@@ -144,25 +146,7 @@ public class MiembroFragment extends Fragment {
 
         if(cursor.moveToFirst()){
             do{
-                int personajeID = cursor.getInt(0);
-                String personajeName = cursor.getString(1);
-                int personajeEstrellas = cursor.getInt(2);
-                String personajeElemento = cursor.getString(3);
-                String personajeTipoArma = cursor.getString(4);
-                ArmaModel personajeArma = viewArma(cursor.getInt(5));
-                ArtefactoModel set1 = viewArtefacto(cursor.getInt(6));
-                ArtefactoModel set2 = viewArtefacto(cursor.getInt(7));
-                String reloj = cursor.getString(8);
-                String caliz = cursor.getString(9);
-                String diadema = cursor.getString(10);
-
-                PersonajeModel newPersonaje = new PersonajeModel(personajeID, personajeName, personajeEstrellas, personajeElemento,
-                        personajeTipoArma, personajeArma, set1, set2, reloj, caliz, diadema);
-
-                if(!listaEquipo.contains(newPersonaje)) {
-
-                    listaPersonajes.add(newPersonaje);
-                }
+                actualizarLista(cursor);
 
             }while(cursor.moveToNext());
         }
@@ -227,6 +211,28 @@ public class MiembroFragment extends Fragment {
 
         TabLayout tab = (TabLayout) SingletonMap.getInstance().get("tab");
         tab.getTabAt(pos-1).setText(personaje.getNombre());
+    }
+
+    private void actualizarLista(Cursor cursor){
+        int personajeID = cursor.getInt(0);
+        String personajeName = cursor.getString(1);
+        int personajeEstrellas = cursor.getInt(2);
+        String personajeElemento = cursor.getString(3);
+        String personajeTipoArma = cursor.getString(4);
+        ArmaModel personajeArma = viewArma(cursor.getInt(5));
+        ArtefactoModel set1 = viewArtefacto(cursor.getInt(6));
+        ArtefactoModel set2 = viewArtefacto(cursor.getInt(7));
+        String reloj = cursor.getString(8);
+        String caliz = cursor.getString(9);
+        String diadema = cursor.getString(10);
+
+        PersonajeModel newPersonaje = new PersonajeModel(personajeID, personajeName, personajeEstrellas, personajeElemento,
+                personajeTipoArma, personajeArma, set1, set2, reloj, caliz, diadema);
+
+        if(!personaje.equals(newPersonaje)) {
+
+            listaPersonajes.add(newPersonaje);
+        }
     }
 
 }

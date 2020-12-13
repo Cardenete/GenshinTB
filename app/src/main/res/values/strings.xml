@@ -39,6 +39,7 @@
     <string name="estrellaDescripcion">Imagen de una estrella</string>
     <string name="miembroDescripcion">Imagen del miembro del equipo</string>
     <string name="botonAdd">Añadir personaje</string>
+    <string name="equipoDefault">Equipo Predeterminado</string>
 
     <string-array name="listaAtributosReloj">
         <item>Vida</item>

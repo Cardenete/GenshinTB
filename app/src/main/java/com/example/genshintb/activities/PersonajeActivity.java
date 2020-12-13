@@ -172,10 +172,15 @@ public class PersonajeActivity extends AppCompatActivity {
 
             }while(cursor.moveToNext());
         }
+        data.close();
     }
 
     private void actualizarEquipamiento(){
-        cambioArma.setSelection(personaje.getArma().getID()-1 % listaArmas.size());
+        for(int i = 0; i < listaArmas.size(); i++){
+            if(personaje.getArma().getID() == listaArmas.get(i).getID()){
+                cambioArma.setSelection(i);
+            }
+        }
         cambioSet1.setSelection(personaje.getSet1().getID()-1 % listaArtefactos.size());
         cambioSet2.setSelection(personaje.getSet2().getID()-1 % listaArtefactos.size());
         String[] aux = getResources().getStringArray(R.array.listaAtributosReloj);

@@ -66,7 +66,6 @@ public class PersonajesFragment extends Fragment {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 PersonajeModel personaje = (PersonajeModel)adapter.getItem(position);
-                Toast.makeText(getActivity(), personaje.getNombre(), Toast.LENGTH_SHORT).show();
                 SingletonMap.getInstance().put("personaje", personaje);
                 Intent intent = new Intent(getActivity().getApplicationContext(), PersonajeActivity.class);
                 startActivity(intent);

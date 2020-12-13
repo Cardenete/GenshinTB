@@ -69,11 +69,13 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(DialogInterface dialog, int which) {
                 m_Text = input.getText().toString();
                 dialog.dismiss();
+                if(m_Text == null || m_Text.equals(""))
+                    m_Text = getResources().getString(R.string.equipoDefault);
                 /*Toast.makeText(getApplicationContext(), m_Text, Toast.LENGTH_SHORT).show();*/
                 data.openWritable();
                 data.crearEquipo(m_Text);
                 data.close();
-                String mensaje = getResources().getString(R.string.equipo) + " " + m_Text + " " + getResources().getString(R.string.equipoCreado);
+                String mensaje = m_Text + " " + getResources().getString(R.string.equipoCreado);
                 Toast.makeText(getApplicationContext(), mensaje, Toast.LENGTH_SHORT).show();
                 recreate();
             }

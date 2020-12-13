@@ -38,6 +38,8 @@
     <string name="estrellaDescripcion">Image of a star</string>
     <string name="miembroDescripcion">Picture of the team member</string>
     <string name="botonAdd">Add character</string>
+    <string name="equipoDefault">Default Team</string>
+
 
     <string-array name="listaAtributosReloj">
         <item>HP</item>
