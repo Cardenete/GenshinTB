@@ -91,7 +91,7 @@
         android:id="@+id/listaCambioPersonaje"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#C6C6C6"
+        android:background="@color/medium_black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
