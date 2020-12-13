@@ -42,8 +42,8 @@ public class EquiposFragment extends Fragment {
     boolean allowRefresh = false;
 
     public static EquiposFragment newInstance() {
-        EquiposFragment fragment = new EquiposFragment();
-        return fragment;
+        return  new EquiposFragment();
+
     }
 
     @Override
@@ -84,7 +84,7 @@ public class EquiposFragment extends Fragment {
             @Override
             public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id){
                 EquipoModel equipo = (EquipoModel)adapter.getItem(position);
-                AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+                AlertDialog.Builder builder = new AlertDialog.Builder(getActivity(), R.style.AlertDialogCustom);
                 builder.setTitle(R.string.borrarEquipo);
 
 
