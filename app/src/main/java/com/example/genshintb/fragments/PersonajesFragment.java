@@ -140,8 +140,18 @@ public class PersonajesFragment extends Fragment {
                 builder.show();
             }
         });
+        view.findViewById(R.id.reinicioFiltro).setOnClickListener(new View.OnClickListener(){
 
+            @Override
+            public void onClick(View view){
+                lista = new ArrayList<>();
+                viewData();
+                adapter.updateData(lista);
+            }
+        });
     }
+
+
 
     private void viewData(){
         data.open();
@@ -200,6 +210,6 @@ public class PersonajesFragment extends Fragment {
             estrella = es;
         if(!ti.equals(getResources().getString(R.string.todos)))
             tipo = ti;
-        Log.i("FILTRADO", elemento + " " + estrella + " " + tipo);
+
     }
 }

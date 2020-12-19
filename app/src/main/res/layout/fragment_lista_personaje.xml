@@ -3,11 +3,31 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <Button
-        android:id="@+id/filtroPersonajes"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/filtroPersonajes" />
+        android:orientation="horizontal"
+        android:weightSum="2">
+
+        <Button
+            android:id="@+id/filtroPersonajes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/filtroPersonajes"
+            android:layout_weight="1"
+            />
+
+        <Button
+            android:id="@+id/reinicioFiltro"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:onClick="reiniciarOnClick"
+            android:text="@string/reinicioFiltro" />
+
+    </LinearLayout>
+
+
 
     <ListView
         android:id="@+id/lv_personajes"

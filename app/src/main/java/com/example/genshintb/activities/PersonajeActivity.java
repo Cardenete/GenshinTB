@@ -132,7 +132,6 @@ public class PersonajeActivity extends AppCompatActivity {
         InputStream is = null;
         try{
             is=am.open(fileName + ".png");
-            Log.i("gf", fileName);
         }catch (IOException e){
             e.printStackTrace();
         }

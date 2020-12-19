@@ -46,7 +46,7 @@
     <string name="tipoArma">Type of weapon</string>
     <string name="filtroVacio">There are no results for this query</string>
     <string name="todos">All</string>
-
+    <string name="reinicioFiltro">Reset</string>
 
 
 

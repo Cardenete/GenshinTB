@@ -47,6 +47,7 @@
     <string name="tipoArma">Tipo de arma</string>
     <string name="filtroVacio">No hay resultados para la búsqueda</string>
     <string name="todos">Todos</string>
+    <string name="reinicioFiltro">Reiniciar</string>
 
     <string-array name="listaAtributosReloj">
         <item>Vida</item>
