@@ -39,6 +39,11 @@
     <string name="miembroDescripcion">Picture of the team member</string>
     <string name="botonAdd">Add character</string>
     <string name="equipoDefault">Default Team</string>
+    <string name="filtroPersonajes">Filter</string>
+    <string name="filtrado">Filter characters</string>
+    <string name="nombrePersonaje">Character\'s name</string>
+    <string name="elementoPersonaje">Character\'s Element</string>
+    <string name="tipoArma">Type of weapon</string>
 
 
     <string-array name="listaAtributosReloj">
@@ -65,5 +70,26 @@
         <item>CRIT Rate</item>
         <item>CRIT Damage</item>
         <item>Healing Bonus</item>
+    </string-array>
+    <string-array name="listaEstrellas">
+        <item>4 Stars</item>
+        <item>5 Stars</item>
+    </string-array>
+    <string-array name="listaTipo">
+        <item>Bow</item>
+        <item>Catalyst</item>
+        <item>Claymore</item>
+        <item>Polearm</item>
+        <item>Sword</item>
+    </string-array>
+    <string-array name="listaElementos">
+        <item> </item>
+        <item>Anemo</item>
+        <item>Cryo</item>
+        <item>Dendro</item>
+        <item>Electro</item>
+        <item>Geo</item>
+        <item>Hydro</item>
+        <item>Pyro</item>
     </string-array>
 </resources>

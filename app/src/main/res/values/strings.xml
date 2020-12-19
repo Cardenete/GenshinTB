@@ -40,6 +40,11 @@
     <string name="miembroDescripcion">Imagen del miembro del equipo</string>
     <string name="botonAdd">Añadir personaje</string>
     <string name="equipoDefault">Equipo Predeterminado</string>
+    <string name="filtroPersonajes">Filtrar</string>
+    <string name="filtrado">Filtra los personajes</string>
+    <string name="nombrePersonaje">Nombre del personaje</string>
+    <string name="elementoPersonaje">Elemento del personaje</string>
+    <string name="tipoArma">Tipo de arma</string>
 
     <string-array name="listaAtributosReloj">
         <item>Vida</item>
@@ -67,4 +72,26 @@
         <item>Daño de Crítico</item>
         <item>Bono de Curación</item>
     </string-array>
+
+    <string-array name="listaEstrellas">
+        <item>4 Estrellas</item>
+        <item>5 Estrellas</item>
+    </string-array>
+    <string-array name="listaTipo">
+        <item>Arco</item>
+        <item>Catalizador</item>
+        <item>Claymore</item>
+        <item>Espada</item>
+        <item>Lanza</item>
+    </string-array>
+    <string-array name="listaElementos">
+        <item>Anemo</item>
+        <item>Cryo</item>
+        <item>Dendro</item>
+        <item>Electro</item>
+        <item>Geo</item>
+        <item>Hydro</item>
+        <item>Pyro</item>
+    </string-array>
+
 </resources>

@@ -19,6 +19,7 @@ import android.text.InputType;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.example.genshintb.activities.ui.main.SectionsPagerAdapter;

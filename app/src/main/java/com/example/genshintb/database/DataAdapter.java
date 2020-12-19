@@ -75,11 +75,8 @@ public class DataAdapter {
 
     public Cursor filtrarPersonajes(String nombre, String elemento, String estrellas, String tipoArma){
         try{
-            return mDb.query("Personaje", null, "nombre=? and elemento=? and estrellas=? and tipo=?", new String[]{nombre, elemento, estrellas, tipoArma},
-                    null, null, null);
-
-
-            //return cursor;
+            return mDb.query("Personaje", null, "nombre LIKE ? and elemento LIKE ? and estrellas LIKE ? and tipoArma LIKE ?",
+                    new String[]{"%"+nombre+"%", "%"+elemento+"%", "%"+estrellas+"%", "%"+tipoArma+"%"}, null, null, null);
         }catch (SQLException e){
             Log.e(TAG, "getTestData >>"+ mDbHelper.DB_FILE + " "+ e.toString());
             throw e;

@@ -1,14 +1,22 @@
 package com.example.genshintb.fragments;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
+import android.text.InputType;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -37,6 +45,7 @@ public class PersonajesFragment extends Fragment {
     List<PersonajeModel> lista = new ArrayList<>();
     DataAdapter data;
     ListView lv;
+    Button filtrar;
 
     public static PersonajesFragment newInstance() {
         PersonajesFragment fragment = new PersonajesFragment();
@@ -53,6 +62,7 @@ public class PersonajesFragment extends Fragment {
         lv = (ListView)view.findViewById(R.id.lv_personajes);
         data = new DataAdapter(getActivity().getApplicationContext());
         viewData();
+        filtrar = view.findViewById(R.id.filtroPersonajes);
         adapter = new PersonajeAdapter(getActivity(), lista);
         lv.setAdapter(adapter);
 
@@ -72,32 +82,65 @@ public class PersonajesFragment extends Fragment {
             }
         });
 
+        view.findViewById(R.id.filtroPersonajes).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                AlertDialog.Builder builder = new AlertDialog.Builder(getActivity(), R.layout.filtro);
+                builder.setTitle(R.string.filtrado);
+                /*final EditText nombrePersonaje = new EditText(getActivity());
+                nombrePersonaje.setInputType(InputType.TYPE_CLASS_TEXT);
+                builder.setView(nombrePersonaje);*/
+                View mview = getLayoutInflater().inflate(R.layout.filtro, null);
+                final EditText nom = (EditText)mview.findViewById(R.id.nombreFiltroEdit);
+                final Spinner ele = mview.findViewById(R.id.elementoFiltroEdit);
+                ArrayAdapter<String> filtroAdapter = new ArrayAdapter<>(getActivity(), android.R.layout.simple_spinner_item, getResources().getStringArray(R.array.listaElementos));
+                ele.setAdapter(filtroAdapter);
+                final Spinner est = mview.findViewById(R.id.estrellasFiltroEdit);
+                filtroAdapter = new ArrayAdapter<>(getActivity(), android.R.layout.simple_spinner_item, getResources().getStringArray(R.array.listaEstrellas));
+                est.setAdapter(filtroAdapter);
+                final Spinner tip = mview.findViewById(R.id.tipoFiltroEdit);
+                filtroAdapter = new ArrayAdapter<>(getActivity(), android.R.layout.simple_spinner_item, getResources().getStringArray(R.array.listaTipo));
+                tip.setAdapter(filtroAdapter);
+
+                builder.setPositiveButton(R.string.confirmar, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.dismiss();
+                        /*if(nom == null || nom.equals(""))
+
+                        /*Toast.makeText(getApplicationContext(), m_Text, Toast.LENGTH_SHORT).show();*/
+                        /*data.openWritable();
+                        data.crearEquipo(m_Text);
+                        data.close();
+                        String mensaje = m_Text + " " + getResources().getString(R.string.equipoCreado);
+                        Toast.makeText(getApplicationContext(), mensaje, Toast.LENGTH_SHORT).show();
+                        recreate();*/
+                        data.open();
+                        lista = new ArrayList<>();
+                        actualizarLista(data.filtrarPersonajes(nom.getText().toString(), (String)ele.getSelectedItem(), (String)est.getSelectedItem(), (String)tip.getSelectedItem()));
+                        data.close();
+                        adapter = new PersonajeAdapter(getActivity(), lista);
+                        lv.setAdapter(adapter);
+
+                    }
+                });
+                builder.setNegativeButton(R.string.cancelar, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.cancel();
+                    }
+                });
+                builder.setView(mview);
+                builder.show();
+            }
+        });
+
     }
 
     private void viewData(){
         data.open();
         Cursor cursor = data.getAllPersonajes();
-        if(cursor.moveToFirst()){
-            do{
-                int personajeID = cursor.getInt(0);
-                String personajeName = cursor.getString(1);
-                int personajeEstrellas = cursor.getInt(2);
-                String personajeElemento = cursor.getString(3);
-                String personajeTipoArma = cursor.getString(4);
-                ArmaModel personajeArma = viewArma(cursor.getInt(5));
-                ArtefactoModel set1 = viewArtefacto(cursor.getInt(6));
-                ArtefactoModel set2 = viewArtefacto(cursor.getInt(7));
-                String reloj = cursor.getString(8);
-                String caliz = cursor.getString(9);
-                String diadema = cursor.getString(10);
-
-                PersonajeModel newPersonaje = new PersonajeModel(personajeID, personajeName, personajeEstrellas, personajeElemento,
-                        personajeTipoArma, personajeArma, set1, set2, reloj, caliz, diadema);
-
-                lista.add(newPersonaje);
-
-            }while(cursor.moveToNext());
-        }
+        actualizarLista(cursor);
         data.close();
     }
 
@@ -118,6 +161,30 @@ public class PersonajesFragment extends Fragment {
             return new ArtefactoModel(cursor.getInt(0), cursor.getString(1));
         }else {
             return new ArtefactoModel();
+        }
+    }
+
+    private void actualizarLista(Cursor cursor){
+        if(cursor.moveToFirst()){
+            do{
+                int personajeID = cursor.getInt(0);
+                String personajeName = cursor.getString(1);
+                int personajeEstrellas = cursor.getInt(2);
+                String personajeElemento = cursor.getString(3);
+                String personajeTipoArma = cursor.getString(4);
+                ArmaModel personajeArma = viewArma(cursor.getInt(5));
+                ArtefactoModel set1 = viewArtefacto(cursor.getInt(6));
+                ArtefactoModel set2 = viewArtefacto(cursor.getInt(7));
+                String reloj = cursor.getString(8);
+                String caliz = cursor.getString(9);
+                String diadema = cursor.getString(10);
+
+                PersonajeModel newPersonaje = new PersonajeModel(personajeID, personajeName, personajeEstrellas, personajeElemento,
+                        personajeTipoArma, personajeArma, set1, set2, reloj, caliz, diadema);
+
+                lista.add(newPersonaje);
+
+            }while(cursor.moveToNext());
         }
     }
 }

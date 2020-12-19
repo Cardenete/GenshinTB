@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/nombreFiltro"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/nombrePersonaje"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/nombreFiltroEdit"/>
+
+    <TextView
+        android:id="@+id/elementoFiltro"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/elementoPersonaje"
+        app:layout_constraintBottom_toTopOf="@+id/elementoFiltroEdit"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/nombreFiltroEdit"/>
+
+    <Spinner
+        android:id="@+id/elementoFiltroEdit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@+id/estrellasFiltro"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/elementoFiltro" />
+
+    <TextView
+        android:id="@+id/estrellasFiltro"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/estrella"
+        app:layout_constraintBottom_toTopOf="@+id/estrellasFiltroEdit"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/elementoFiltroEdit" />
+
+    <TextView
+        android:id="@+id/tipoFiltro"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/tipoArma"
+        app:layout_constraintBottom_toTopOf="@+id/tipoFiltroEdit"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/estrellasFiltroEdit" />
+
+    <Spinner
+        android:id="@+id/estrellasFiltroEdit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@+id/tipoFiltro"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/estrellasFiltro" />
+
+    <Spinner
+        android:id="@+id/tipoFiltroEdit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tipoFiltro" />
+
+    <EditText
+        android:id="@+id/nombreFiltroEdit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="@string/nombrePersonaje"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toTopOf="@id/elementoFiltro"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/nombreFiltro" />
+</androidx.constraintlayout.widget.ConstraintLayout>
