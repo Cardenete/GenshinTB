@@ -73,6 +73,19 @@ public class DataAdapter {
         }
     }
 
+    public Cursor filtrarPersonajes(String nombre, String elemento, String estrellas, String tipoArma){
+        try{
+            return mDb.query("Personaje", null, "nombre=? and elemento=? and estrellas=? and tipo=?", new String[]{nombre, elemento, estrellas, tipoArma},
+                    null, null, null);
+
+
+            //return cursor;
+        }catch (SQLException e){
+            Log.e(TAG, "getTestData >>"+ mDbHelper.DB_FILE + " "+ e.toString());
+            throw e;
+        }
+    }
+
     public Cursor getAllEquipos(){
         try{
             return mDb.query("Equipo", null, null, null,
@@ -92,6 +105,8 @@ public class DataAdapter {
             throw e;
         }
     }
+
+
 
     public Cursor getArma(int id){
         try{
