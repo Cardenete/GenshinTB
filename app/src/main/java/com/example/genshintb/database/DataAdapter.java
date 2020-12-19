@@ -82,6 +82,15 @@ public class DataAdapter {
             throw e;
         }
     }
+    public Cursor filtrarPersonajes2(String elemento, String estrellas){
+        try{
+            return mDb.query("Personaje", null, "elemento = ? AND estrellas = ?",
+                    new String[]{elemento, estrellas}, null, null, null);
+        }catch (SQLException e){
+            Log.e(TAG, "getTestData >>"+ mDbHelper.DB_FILE + " "+ e.toString());
+            throw e;
+        }
+    }
 
     public Cursor getAllEquipos(){
         try{

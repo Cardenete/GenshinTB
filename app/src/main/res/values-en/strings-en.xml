@@ -44,6 +44,10 @@
     <string name="nombrePersonaje">Character\'s name</string>
     <string name="elementoPersonaje">Character\'s Element</string>
     <string name="tipoArma">Type of weapon</string>
+    <string name="filtroVacio">There are no results for this query</string>
+    <string name="todos">All</string>
+
+
 
 
     <string-array name="listaAtributosReloj">
@@ -72,10 +76,12 @@
         <item>Healing Bonus</item>
     </string-array>
     <string-array name="listaEstrellas">
-        <item>4 Stars</item>
-        <item>5 Stars</item>
+        <item>All</item>
+        <item>4</item>
+        <item>5</item>
     </string-array>
     <string-array name="listaTipo">
+        <item>All</item>
         <item>Bow</item>
         <item>Catalyst</item>
         <item>Claymore</item>
@@ -83,7 +89,7 @@
         <item>Sword</item>
     </string-array>
     <string-array name="listaElementos">
-        <item> </item>
+        <item>All</item>
         <item>Anemo</item>
         <item>Cryo</item>
         <item>Dendro</item>

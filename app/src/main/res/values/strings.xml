@@ -45,6 +45,8 @@
     <string name="nombrePersonaje">Nombre del personaje</string>
     <string name="elementoPersonaje">Elemento del personaje</string>
     <string name="tipoArma">Tipo de arma</string>
+    <string name="filtroVacio">No hay resultados para la búsqueda</string>
+    <string name="todos">Todos</string>
 
     <string-array name="listaAtributosReloj">
         <item>Vida</item>
@@ -74,10 +76,12 @@
     </string-array>
 
     <string-array name="listaEstrellas">
-        <item>4 Estrellas</item>
-        <item>5 Estrellas</item>
+        <item>Todos</item>
+        <item>4</item>
+        <item>5</item>
     </string-array>
     <string-array name="listaTipo">
+        <item>Todos</item>
         <item>Arco</item>
         <item>Catalizador</item>
         <item>Claymore</item>
@@ -85,6 +89,7 @@
         <item>Lanza</item>
     </string-array>
     <string-array name="listaElementos">
+        <item>Todos</item>
         <item>Anemo</item>
         <item>Cryo</item>
         <item>Dendro</item>

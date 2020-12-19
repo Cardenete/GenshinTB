@@ -46,6 +46,9 @@ public class PersonajesFragment extends Fragment {
     DataAdapter data;
     ListView lv;
     Button filtrar;
+    String elemento = "";
+    String estrella = "";
+    String tipo = "";
 
     public static PersonajesFragment newInstance() {
         PersonajesFragment fragment = new PersonajesFragment();
@@ -87,17 +90,22 @@ public class PersonajesFragment extends Fragment {
             public void onClick(View v) {
                 AlertDialog.Builder builder = new AlertDialog.Builder(getActivity(), R.layout.filtro);
                 builder.setTitle(R.string.filtrado);
-                /*final EditText nombrePersonaje = new EditText(getActivity());
-                nombrePersonaje.setInputType(InputType.TYPE_CLASS_TEXT);
-                builder.setView(nombrePersonaje);*/
                 View mview = getLayoutInflater().inflate(R.layout.filtro, null);
+
+                elemento = "";
+                estrella = "";
+                tipo = "";
+
                 final EditText nom = (EditText)mview.findViewById(R.id.nombreFiltroEdit);
+
                 final Spinner ele = mview.findViewById(R.id.elementoFiltroEdit);
                 ArrayAdapter<String> filtroAdapter = new ArrayAdapter<>(getActivity(), android.R.layout.simple_spinner_item, getResources().getStringArray(R.array.listaElementos));
                 ele.setAdapter(filtroAdapter);
+
                 final Spinner est = mview.findViewById(R.id.estrellasFiltroEdit);
                 filtroAdapter = new ArrayAdapter<>(getActivity(), android.R.layout.simple_spinner_item, getResources().getStringArray(R.array.listaEstrellas));
                 est.setAdapter(filtroAdapter);
+
                 final Spinner tip = mview.findViewById(R.id.tipoFiltroEdit);
                 filtroAdapter = new ArrayAdapter<>(getActivity(), android.R.layout.simple_spinner_item, getResources().getStringArray(R.array.listaTipo));
                 tip.setAdapter(filtroAdapter);
@@ -106,30 +114,28 @@ public class PersonajesFragment extends Fragment {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         dialog.dismiss();
-                        /*if(nom == null || nom.equals(""))
-
-                        /*Toast.makeText(getApplicationContext(), m_Text, Toast.LENGTH_SHORT).show();*/
-                        /*data.openWritable();
-                        data.crearEquipo(m_Text);
-                        data.close();
-                        String mensaje = m_Text + " " + getResources().getString(R.string.equipoCreado);
-                        Toast.makeText(getApplicationContext(), mensaje, Toast.LENGTH_SHORT).show();
-                        recreate();*/
                         data.open();
                         lista = new ArrayList<>();
-                        actualizarLista(data.filtrarPersonajes(nom.getText().toString(), (String)ele.getSelectedItem(), (String)est.getSelectedItem(), (String)tip.getSelectedItem()));
+                        comprobarFiltros((String)ele.getSelectedItem(), (String)est.getSelectedItem(), (String)tip.getSelectedItem());
+                        actualizarLista(data.filtrarPersonajes(nom.getText().toString(), elemento, estrella, tipo));
                         data.close();
-                        adapter = new PersonajeAdapter(getActivity(), lista);
-                        lv.setAdapter(adapter);
-
+                        if(lista.isEmpty()){
+                            Toast.makeText(getActivity().getApplicationContext(), getResources().getString(R.string.filtroVacio), Toast.LENGTH_SHORT).show();
+                            viewData();
+                        }else
+                            adapter.updateData(lista);
                     }
                 });
                 builder.setNegativeButton(R.string.cancelar, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         dialog.cancel();
+                        lista = new ArrayList<>();
+                        viewData();
+                        adapter.updateData(lista);
                     }
                 });
+
                 builder.setView(mview);
                 builder.show();
             }
@@ -186,5 +192,14 @@ public class PersonajesFragment extends Fragment {
 
             }while(cursor.moveToNext());
         }
+    }
+    private void comprobarFiltros(String el, String es, String ti){
+        if(!el.equals(getResources().getString(R.string.todos)))
+            elemento = el;
+        if(!es.equals(getResources().getString(R.string.todos)))
+            estrella = es;
+        if(!ti.equals(getResources().getString(R.string.todos)))
+            tipo = ti;
+        Log.i("FILTRADO", elemento + " " + estrella + " " + tipo);
     }
 }

@@ -80,4 +80,9 @@ public class PersonajeAdapter extends BaseAdapter {
 
         return BitmapFactory.decodeStream(is);
     }
+
+    public void updateData(List<PersonajeModel> update){
+        this.data = update;
+        notifyDataSetChanged();
+    }
 }
