@@ -188,7 +188,6 @@ public class MiembroFragment extends Fragment {
         InputStream is = null;
         try{
             is=am.open(fileName + ".png");
-            Log.i("gf", is.toString());
         }catch (IOException e){
             e.printStackTrace();
         }

@@ -73,7 +73,6 @@ public class PersonajeAdapter extends BaseAdapter {
         InputStream is = null;
         try{
             is=am.open(fileName + ".png");
-            Log.i("gf", fileName);
         }catch (IOException e){
             e.printStackTrace();
         }

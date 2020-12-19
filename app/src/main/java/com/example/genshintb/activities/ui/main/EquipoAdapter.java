@@ -84,7 +84,6 @@ public class EquipoAdapter extends BaseAdapter {
         InputStream is = null;
         try{
             is=am.open("personajes/" + fileName + ".png");
-            Log.i("gf", fileName);
         }catch (IOException e){
             e.printStackTrace();
         }
